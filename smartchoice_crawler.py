@@ -47,6 +47,8 @@ import time
 import re
 import json
 import os
+import shutil
+from pathlib import Path
 
 # 📌 셀렉터 모음
 SELECTORS = {
@@ -132,27 +134,63 @@ SHEET_CARRIER_INDICES = {
 }
 
 # 📌 WebDriver 실행
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')  # 헤드리스 모드
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(options=options)
 driver.get("https://m.smartchoice.or.kr/smc/mobile/dantongList.do?type=m")
 WebDriverWait(driver, 10).until(EC.presence_of_element_located(SELECTORS["manufacturer_dropdown"]))
 time.sleep(1)  # 페이지 완전 로딩 대기
 
-# 📌 오늘 날짜 기준 1년 이내 출시 모델만 필터링
+# 📌 오늘 날짜 기준 2년 이내 출시 모델만 필터링
 results = []
 today = datetime.today()
-cutoff_year = today.year - 1
+cutoff_year = today.year - 2
 
 # 📌 결과 파일명 생성
 def get_output_filename():
-    """날짜가 포함된 파일명 생성 (중복 시 숫자 추가)"""
+    """연월별 폴더에 날짜가 포함된 파일명 생성"""
+    today = datetime.today()
+    year_month = today.strftime('%Y%m')
+    
+    # 연월별 폴더 생성
+    output_dir = Path(f"data/{year_month}")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # 파일명 생성
     base_name = f"smartchoice_results_{today.strftime('%Y%m%d')}.json"
     counter = 1
     
-    while os.path.exists(base_name):
+    while (output_dir / base_name).exists():
         base_name = f"smartchoice_results_{today.strftime('%Y%m%d')}_{counter}.json"
         counter += 1
     
-    return base_name
+    return output_dir / base_name
+
+def cleanup_old_data():
+    """한 달이 지난 데이터 폴더 삭제"""
+    today = datetime.today()
+    data_dir = Path("data")
+    
+    if not data_dir.exists():
+        return
+        
+    for folder in data_dir.iterdir():
+        if not folder.is_dir():
+            continue
+            
+        try:
+            folder_date = datetime.strptime(folder.name, '%Y%m')
+            # 한 달이 지난 폴더 삭제
+            if (today.year - folder_date.year) * 12 + (today.month - folder_date.month) > 1:
+                shutil.rmtree(folder)
+                print(f"🗑️ 오래된 데이터 폴더 삭제: {folder}")
+        except ValueError:
+            continue
+
+# 메인 실행 부분 시작 전에 오래된 데이터 정리
+cleanup_old_data()
 
 output_file = get_output_filename()
 print(f"📁 결과 파일: {output_file}")
@@ -235,7 +273,7 @@ for brand in BRANDS:
             except Exception as e:
                 print("❌ 모델 파싱 실패:", e)
 
-        print(f"✅ 출시일 1년 이내 모델 수: {len(model_data)}개")
+        print(f"✅ 출시일 2년 이내 모델 수: {len(model_data)}개")
 
         # 모달 닫기
         driver.find_element(*SELECTORS["modal_close_button"]).click()
