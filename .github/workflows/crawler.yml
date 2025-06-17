@@ -3,7 +3,7 @@ name: SmartChoice Crawler
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'  # 매일 자정 실행 (UTC 기준)
+    - cron: '0 15 * * *'  # 매일 자정 실행 (UTC 기준)
 
 jobs:
   crawl:
