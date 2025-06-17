@@ -40,8 +40,9 @@ jobs:
         git add -u
         git commit -m "🧹 30일 이상 지난 JSON 파일 삭제" || echo "삭제할 파일 없음"
 
-    - name: 새 결과 푸시
+    - name: 결과 커밋 및 푸시
       run: |
         git add data/*.json
-        git commit -m "📦 최신 크롤링 결과 반영" || echo "변경 없음"
-        git push
+        git commit -m "📦 크롤링 결과 업데이트" || echo "변경 없음"
+        git pull --rebase origin main || echo "충돌 없음"
+        git push origin main
