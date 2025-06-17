@@ -1,4 +1,4 @@
-# 셀렉션 코드. A01의 반복구조
+# 셀렉션 코드. A01의 반복구조, 자동 삭제구조 추가
 
 #통신사
 #contentsarea > div.devicesupport > div.contentsbox > div.tab_contents > div.dantong_result_top > div > div > table > thead > tr:nth-child(1) > td:nth-child(2)
