@@ -152,12 +152,11 @@ cutoff_year = today.year - 2
 
 # 📌 결과 파일명 생성
 def get_output_filename():
-    """연월별 폴더에 날짜가 포함된 파일명 생성"""
+    """data 폴더에 날짜가 포함된 파일명 생성"""
     today = datetime.today()
-    year_month = today.strftime('%Y%m')
     
-    # 연월별 폴더 생성
-    output_dir = Path(f"data/{year_month}")
+    # data 폴더 생성
+    output_dir = Path("data")
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # 파일명 생성
@@ -171,24 +170,27 @@ def get_output_filename():
     return output_dir / base_name
 
 def cleanup_old_data():
-    """한 달이 지난 데이터 폴더 삭제"""
+    """한 달이 지난 데이터 파일 삭제"""
     today = datetime.today()
     data_dir = Path("data")
     
     if not data_dir.exists():
         return
         
-    for folder in data_dir.iterdir():
-        if not folder.is_dir():
+    for file in data_dir.iterdir():
+        if not file.is_file() or not file.name.startswith("smartchoice_results_"):
             continue
             
         try:
-            folder_date = datetime.strptime(folder.name, '%Y%m')
-            # 한 달이 지난 폴더 삭제
-            if (today.year - folder_date.year) * 12 + (today.month - folder_date.month) > 1:
-                shutil.rmtree(folder)
-                print(f"🗑️ 오래된 데이터 폴더 삭제: {folder}")
-        except ValueError:
+            # 파일명에서 날짜 추출 (smartchoice_results_YYYYMMDD.json 형식)
+            date_str = file.stem.split("_")[-1]
+            file_date = datetime.strptime(date_str, '%Y%m%d')
+            
+            # 한 달이 지난 파일 삭제
+            if (today.year - file_date.year) * 12 + (today.month - file_date.month) > 1:
+                file.unlink()
+                print(f"🗑️ 오래된 데이터 파일 삭제: {file}")
+        except (ValueError, IndexError):
             continue
 
 # 메인 실행 부분 시작 전에 오래된 데이터 정리
