@@ -148,7 +148,7 @@ time.sleep(1)  # 페이지 완전 로딩 대기
 # 📌 오늘 날짜 기준 2년 이내 출시 모델만 필터링
 results = []
 today = datetime.today()
-cutoff_year = today.year - 2
+cutoff_year = today.year - 1
 
 # 📌 결과 파일명 생성
 def get_output_filename():
@@ -264,7 +264,7 @@ for brand in BRANDS:
         model_elements = driver.find_elements(*SELECTORS["model_list"])
         print(f"모델 요소 수: {len(model_elements)}개")
 
-        # 모델 정보 수집 (1년 이내만)
+        # 모델 정보 수집 (2년 이내만)
         for el in model_elements:
             try:
                 name = el.find_element(By.ID, "spanPhone_name").text.strip()
