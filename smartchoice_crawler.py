@@ -148,7 +148,7 @@ time.sleep(1)  # 페이지 완전 로딩 대기
 # 📌 오늘 날짜 기준 2년 이내 출시 모델만 필터링
 results = []
 today = datetime.today()
-cutoff_year = today.year - 1
+cutoff_year = today.year - 2
 
 # 📌 결과 파일명 생성
 def get_output_filename():
