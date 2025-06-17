@@ -9,12 +9,11 @@ jobs:
   crawl:
     runs-on: ubuntu-latest
 
-  teps:
+    steps:
     - name: 저장소 체크아웃
       uses: actions/checkout@v3
       with:
         persist-credentials: false
-  
 
     - name: Python 설치
       uses: actions/setup-python@v4
@@ -53,4 +52,3 @@ jobs:
         git commit -m "📦 자동 크롤링 결과 반영" || echo "변경 없음"
         git pull --rebase origin main || echo "충돌 없음"
         git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
-  
