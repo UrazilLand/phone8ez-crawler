@@ -44,14 +44,25 @@ class SmartChoiceCrawler:
             options.add_argument(f"--window-size={config.BROWSER_WIDTH},{config.BROWSER_HEIGHT}")
             options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
             
-            # GitHub Actions 환경에서 user-data-dir 사용하지 않음
-            # options.add_argument(f"--user-data-dir={user_data_dir}")
+            # GitHub Actions 환경에서 추가 옵션
+            options.add_argument("--disable-extensions")
+            options.add_argument("--disable-plugins")
+            options.add_argument("--no-first-run")
+            options.add_argument("--no-default-browser-check")
+            options.add_argument("--disable-background-timer-throttling")
+            options.add_argument("--disable-backgrounding-occluded-windows")
+            options.add_argument("--disable-renderer-backgrounding")
+            options.add_argument("--disable-features=TranslateUI")
+            options.add_argument("--disable-ipc-flooding-protection")
 
-            # Selenium 4의 내장 드라이버 관리자 사용
-            self.driver = webdriver.Chrome(options=options)
+            # webdriver-manager를 사용하여 ChromeDriver 자동 관리
+            driver_path = ChromeDriverManager().install()
+            service = Service(driver_path)
+            
+            self.driver = webdriver.Chrome(service=service, options=options)
             
             self.wait = WebDriverWait(self.driver, config.ELEMENT_WAIT)
-            utils.log_message(f"WebDriver 설정 완료")
+            utils.log_message(f"WebDriver 설정 완료 (ChromeDriver: {driver_path})")
             return True
 
         except Exception as e:
