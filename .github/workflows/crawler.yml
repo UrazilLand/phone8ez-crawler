@@ -39,13 +39,12 @@ jobs:
         
     - name: Install ChromeDriver
       run: |
-        # ChromeDriver 설치
-        CHROME_VERSION=$(google-chrome --version | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
-        echo "Chrome 버전: $CHROME_VERSION"
+        # ChromeDriver 설치 (최신 버전 사용)
+        echo "최신 ChromeDriver 설치 중..."
         
-        # ChromeDriver 다운로드 및 설치
-        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        echo "ChromeDriver 버전: $CHROMEDRIVER_VERSION"
+        # 최신 ChromeDriver 버전 다운로드
+        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        echo "최신 ChromeDriver 버전: $CHROMEDRIVER_VERSION"
         
         wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
         unzip /tmp/chromedriver.zip -d /tmp/
