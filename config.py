@@ -11,7 +11,7 @@ DATA_DIR = "data"
 SMARTCHOICE_URL = "https://www.smartchoice.or.kr"
 
 # 브라우저 설정
-HEADLESS = False  # True로 설정하면 브라우저 창이 보이지 않음
+HEADLESS = True  # True로 설정하면 브라우저 창이 보이지 않음
 BROWSER_WIDTH = 1920
 BROWSER_HEIGHT = 1080
 

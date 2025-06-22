@@ -884,7 +884,13 @@ def main():
             "manufacturers": collected_data["manufacturers"]
         }
         
+        # 데이터가 있는지 확인
+        if improved_data["total_models"] == 0:
+            utils.log_message("수집된 모델이 없습니다. 파일을 저장하지 않습니다.")
+            return
+        
         # 파일 저장 (성공 시에만)
+        file_created = False  # 파일 생성 여부 초기화
         try:
             # JSON 파일 저장
             utils.log_message("=== 수집된 데이터 JSON 파일 저장 ===")
@@ -926,9 +932,15 @@ def main():
                 df = pd.DataFrame(csv_data)
                 df.to_csv(csv_filename, index=False, encoding='utf-8-sig')
                 utils.log_message(f"CSV 파일 저장 완료: {csv_filename}")
-            
-            file_created = True  # 파일 생성 성공 표시
-            
+                file_created = True  # 파일 생성 성공 표시
+            else:
+                utils.log_message("CSV 데이터가 없습니다. CSV 파일을 저장하지 않습니다.")
+                # JSON 파일도 삭제
+                if os.path.exists(json_filename):
+                    os.remove(json_filename)
+                    utils.log_message(f"빈 JSON 파일 삭제: {json_filename}")
+                file_created = False
+                return
         except Exception as file_error:
             utils.log_message(f"파일 저장 중 오류 발생: {file_error}")
             file_created = False
