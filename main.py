@@ -31,48 +31,33 @@ class SmartChoiceCrawler:
         self.setup_driver()
     
     def setup_driver(self):
-        """Chrome WebDriver 설정"""
-        utils.log_message("Chrome WebDriver 설정 중...")
-        
-        chrome_options = Options()
-        
-        # 브라우저 옵션 설정
-        for option, value in BROWSER_OPTIONS.items():
-            if option == "headless" and value:
-                chrome_options.add_argument("--headless")
-            elif option == "no_sandbox" and value:
-                chrome_options.add_argument("--no-sandbox")
-            elif option == "disable_dev_shm_usage" and value:
-                chrome_options.add_argument("--disable-dev-shm-usage")
-            elif option == "disable_gpu" and value:
-                chrome_options.add_argument("--disable-gpu")
-            elif option == "window_size":
-                chrome_options.add_argument(f"--window-size={value}")
-            elif option == "user_agent":
-                chrome_options.add_argument(f"--user-agent={value}")
-        
-        # 추가 옵션
-        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        chrome_options.add_experimental_option('useAutomationExtension', False)
-        chrome_options.add_argument("--remote-debugging-port=9222")
-        
+        """WebDriver 설정 (Selenium 4 표준 방식)"""
         try:
-            driver_path = ChromeDriverManager().install()
-            service = Service(driver_path)
-            self.driver = webdriver.Chrome(service=service, options=chrome_options)
-            self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-            utils.log_message("Chrome WebDriver 설정 완료")
+            utils.log_message("Chrome WebDriver 설정 중...")
+            
+            options = Options()
+            if config.HEADLESS:
+                options.add_argument("--headless=new")  # 최신 Headless 모드 사용
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-gpu")
+            options.add_argument(f"--window-size={config.BROWSER_WIDTH},{config.BROWSER_HEIGHT}")
+            options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+            
+            # GitHub Actions 환경에서 user-data-dir 사용하지 않음
+            # options.add_argument(f"--user-data-dir={user_data_dir}")
+
+            # Selenium 4의 내장 드라이버 관리자 사용
+            self.driver = webdriver.Chrome(options=options)
+            
+            self.wait = WebDriverWait(self.driver, config.ELEMENT_WAIT)
+            utils.log_message(f"WebDriver 설정 완료")
+            return True
+
         except Exception as e:
             utils.log_message(f"WebDriver 설정 실패: {e}")
-            utils.log_message("시스템 기본 Chrome WebDriver로 재시도...")
-            try:
-                self.driver = webdriver.Chrome(options=chrome_options)
-                self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-                utils.log_message("시스템 Chrome WebDriver 설정 완료")
-            except Exception as e2:
-                utils.log_message(f"시스템 WebDriver도 실패: {e2}")
-                raise
+            self.driver = None
+            return False
     
     def open_smartchoice_page(self):
         """스마트초이스 페이지 열기"""
