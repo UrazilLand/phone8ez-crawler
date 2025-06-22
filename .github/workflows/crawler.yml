@@ -1,13 +1,14 @@
-name: SmartChoice Crawler
+name: Daily SmartChoice Crawler
 
 on:
   schedule:
-    # 한국시간 23시 (UTC 14:00)
-    - cron: '0 14 * * *'
-  workflow_dispatch:  # 수동 실행 가능
+    # KST 자정 (15:00 UTC)에 매일 실행
+    - cron: '0 15 * * *'
+  # 수동으로 워크플로우를 실행할 수 있도록 설정
+  workflow_dispatch:
 
 jobs:
-  crawl:
+  crawl-and-commit:
     runs-on: ubuntu-latest
     
     steps:
@@ -39,7 +40,7 @@ jobs:
       run: python main.py
       
     - name: Upload data files
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: phone-support-data
         path: data/
