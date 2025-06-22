@@ -169,9 +169,9 @@ class SmartChoiceCrawler:
             return False
     
     def extract_phone_list(self):
-        """휴대폰 선택 모달에서 휴대폰 목록 추출"""
+        """휴대폰 선택 모달에서 휴대폰 목록 추출 (출시일 2년 이내만)"""
         try:
-            utils.log_message("휴대폰 목록 추출 시작...")
+            utils.log_message("휴대폰 목록 추출 시작 (출시일 2년 이내 필터링 적용)...")
             
             # 모달이 로드될 때까지 대기
             time.sleep(2)
@@ -185,6 +185,16 @@ class SmartChoiceCrawler:
             
             phones = []
             current_date = datetime.now()
+            cutoff_date = current_date - timedelta(days=730)  # 2년 전 날짜
+            
+            utils.log_message(f"현재 날짜: {current_date.strftime('%Y-%m-%d')}")
+            utils.log_message(f"필터링 기준 날짜 (2년 전): {cutoff_date.strftime('%Y-%m-%d')}")
+            utils.log_message(f"포함 조건: 출시일 >= {cutoff_date.strftime('%Y-%m-%d')} (2년 이내)")
+            
+            total_phones = len(phone_labels)
+            filtered_count = 0
+            excluded_no_date_count = 0
+            excluded_old_count = 0
             
             for i, label in enumerate(phone_labels):
                 try:
@@ -194,8 +204,12 @@ class SmartChoiceCrawler:
                     
                     # 출시일 추출 (모델명 뒤의 날짜)
                     release_date = None
+                    model_name = phone_text
+                    
                     if "\n" in phone_text:
                         parts = phone_text.split("\n")
+                        model_name = parts[0].strip()
+                        
                         if len(parts) >= 2:
                             date_text = parts[1].strip()
                             try:
@@ -204,33 +218,43 @@ class SmartChoiceCrawler:
                                     year = int(date_text.split("년")[0])
                                     month = int(date_text.split("년")[1].split("월")[0])
                                     release_date = datetime(year, month, 1)
-                            except:
-                                pass
+                                    utils.log_message(f"  모델: {model_name} | 출시일: {release_date.strftime('%Y-%m')}")
+                            except Exception as date_error:
+                                utils.log_message(f"  모델: {model_name} | 출시일 파싱 실패: {date_text} - {date_error}")
                     
-                    # 2년 내 모델만 필터링
+                    # 출시일이 있는 모델만 처리
                     if release_date:
-                        date_diff = current_date - release_date
-                        if date_diff.days <= 730:  # 2년 = 730일
+                        # 2년 이내 출시된 모델만 포함 (cutoff_date 이후 출시)
+                        # release_date >= cutoff_date: 출시일이 2년 전 이후인 모델
+                        if release_date >= cutoff_date:
                             phones.append({
                                 "index": i,
-                                "name": parts[0] if "\n" in phone_text else phone_text,
+                                "name": model_name,
                                 "release_date": release_date.strftime("%Y-%m"),
                                 "full_text": phone_text
                             })
+                            filtered_count += 1
+                            utils.log_message(f"  ✅ 포함 (2년 이내): {model_name} ({release_date.strftime('%Y-%m')})")
+                        else:
+                            excluded_old_count += 1
+                            utils.log_message(f"  ❌ 제외 (2년 초과): {model_name} ({release_date.strftime('%Y-%m')})")
                     else:
-                        # 출시일을 파싱할 수 없는 경우에도 포함 (최근 모델일 가능성)
-                        phones.append({
-                            "index": i,
-                            "name": phone_text,
-                            "release_date": "알 수 없음",
-                            "full_text": phone_text
-                        })
+                        # 출시일을 파싱할 수 없는 경우 제외
+                        excluded_no_date_count += 1
+                        utils.log_message(f"  ❌ 제외 (출시일 없음): {model_name}")
                         
                 except Exception as e:
                     utils.log_message(f"휴대폰 {i} 정보 추출 실패: {e}")
                     continue
             
+            utils.log_message(f"=== 필터링 결과 ===")
+            utils.log_message(f"전체 휴대폰: {total_phones}개")
+            utils.log_message(f"2년 이내 휴대폰: {filtered_count}개")
+            utils.log_message(f"제외된 휴대폰 (2년 초과): {excluded_old_count}개")
+            utils.log_message(f"제외된 휴대폰 (출시일 없음): {excluded_no_date_count}개")
+            utils.log_message(f"총 제외된 휴대폰: {excluded_old_count + excluded_no_date_count}개")
             utils.log_message(f"2년 내 휴대폰 {len(phones)}개 추출 완료")
+            
             return phones
             
         except Exception as e:
@@ -645,6 +669,8 @@ def main():
     utils.cleanup_old_files()
     
     crawler = None
+    file_created = False  # 파일 생성 여부 추적
+    
     try:
         # 크롤러 초기화
         crawler = SmartChoiceCrawler()
@@ -724,9 +750,17 @@ def main():
             "manufacturers": {}
         }
         
-        # 각 제조사별로 전체 모델 선택
+        # 각 제조사별로 필터링된 모델만 선택
         for manufacturer in manufacturers:
-            utils.log_message(f"=== {manufacturer} 제조사 전체 모델 수집 시작 (정식 버전) ===")
+            utils.log_message(f"=== {manufacturer} 제조사 필터링된 모델 수집 시작 (정식 버전) ===")
+            
+            # 해당 제조사의 필터링된 모델 목록 가져오기
+            filtered_phones = all_phone_data.get(manufacturer, [])
+            if not filtered_phones:
+                utils.log_message(f"{manufacturer} 제조사의 필터링된 모델이 없습니다. 다음 제조사로 진행합니다.")
+                continue
+            
+            utils.log_message(f"{manufacturer} 제조사 필터링된 모델 {len(filtered_phones)}개 수집 시작")
             
             manufacturer_data = {
                 "name": manufacturer,
@@ -743,15 +777,18 @@ def main():
                 utils.log_message(f"{manufacturer} 휴대폰 선택 버튼 클릭 실패. 다음 제조사로 진행합니다.")
                 continue
             
-            # 전체 모델 선택 (인덱스 0부터 끝까지)
-            index = 0
-            while True:
-                utils.log_message(f"=== {manufacturer} - 인덱스 {index} 모델 수집 ===")
+            # 필터링된 모델들의 인덱스만 사용하여 크롤링
+            for phone_info in filtered_phones:
+                index = phone_info["index"]
+                model_name = phone_info["name"]
+                release_date = phone_info["release_date"]
+                
+                utils.log_message(f"=== {manufacturer} - 인덱스 {index} 모델 수집 ({model_name}, {release_date}) ===")
                 
                 # 모델 선택
                 if not crawler.select_phone_by_index(index):
-                    utils.log_message(f"{manufacturer} 인덱스 {index} 모델 선택 실패. 다음 제조사로 진행합니다.")
-                    break
+                    utils.log_message(f"{manufacturer} 인덱스 {index} 모델 선택 실패. 다음 모델로 진행합니다.")
+                    continue
                 
                 # 모델 정보 추출 (모델 선택 직후, 선택하기 버튼 누르기 전)
                 model_info = crawler.extract_model_info(index)
@@ -759,13 +796,11 @@ def main():
                 # 선택하기 버튼 클릭
                 if not crawler.click_select_phone_button():
                     utils.log_message(f"{manufacturer} 인덱스 {index} 선택하기 버튼 클릭 실패. 다음 모델로 진행합니다.")
-                    index += 1
                     continue
                 
                 # 검색 버튼 클릭
                 if not crawler.click_search_button():
                     utils.log_message(f"{manufacturer} 인덱스 {index} 검색 버튼 클릭 실패. 다음 모델로 진행합니다.")
-                    index += 1
                     continue
                 
                 # 지원금 정보 추출
@@ -774,8 +809,9 @@ def main():
                     # 모델 정보 구성
                     model_data = {
                         "index": index,
-                        "model_name": model_info["model_name"] if model_info else f"인덱스_{index}_모델",
+                        "model_name": model_info["model_name"] if model_info else model_name,
                         "model_number": model_info["model_number"] if model_info else f"INDEX_{index}",
+                        "release_date": release_date,
                         "support_info": support_info
                     }
                     manufacturer_data["models"].append(model_data)
@@ -792,8 +828,6 @@ def main():
                 if not crawler.click_phone_select_button():
                     utils.log_message(f"{manufacturer} 휴대폰 선택 버튼 재클릭 실패. 다음 제조사로 진행합니다.")
                     break
-                
-                index += 1
             
             collected_data["manufacturers"][manufacturer] = manufacturer_data
             utils.log_message(f"{manufacturer} 제조사 수집 완료: {len(manufacturer_data['models'])}개 모델")
@@ -850,80 +884,89 @@ def main():
             "manufacturers": collected_data["manufacturers"]
         }
         
-        # JSON 파일 저장
-        utils.log_message("=== 수집된 데이터 JSON 파일 저장 ===")
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        json_filename = f"data/phone_support_data_{timestamp}.json"
-        
-        with open(json_filename, 'w', encoding='utf-8') as f:
-            json.dump(improved_data, f, ensure_ascii=False, indent=2)
-        
-        utils.log_message(f"데이터 저장 완료: {json_filename}")
-        
-        # CSV 파일 생성
-        utils.log_message("=== CSV 파일 생성 ===")
-        csv_filename = f"data/phone_support_data_{timestamp}.csv"
-        
-        csv_data = []
-        for manufacturer, manufacturer_data in improved_data["manufacturers"].items():
-            for model in manufacturer_data["models"]:
-                support_info = model["support_info"]
-                if support_info and "sections" in support_info:
-                    for section in support_info["sections"]:
-                        for carrier_name, carrier_data in section["carriers"].items():
-                            row = {
-                                "제조사": manufacturer,
-                                "모델명": model["model_name"],
-                                "모델번호": model["model_number"],
-                                "통신사": carrier_name,
-                                "요금제": carrier_data["plan_name"],
-                                "월요금제": carrier_data.get("monthly_fee", ""),
-                                "기기변경지원금": carrier_data["device_support"],
-                                "번호이동지원금": carrier_data["number_port_support"],
-                                "공시일": carrier_data["announcement_date"],
-                                "섹션": section["section"]
-                            }
-                            csv_data.append(row)
-        
-        if csv_data:
-            import pandas as pd
-            df = pd.DataFrame(csv_data)
-            df.to_csv(csv_filename, index=False, encoding='utf-8-sig')
-            utils.log_message(f"CSV 파일 저장 완료: {csv_filename}")
+        # 파일 저장 (성공 시에만)
+        try:
+            # JSON 파일 저장
+            utils.log_message("=== 수집된 데이터 JSON 파일 저장 ===")
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            json_filename = f"data/phone_support_data_{timestamp}.json"
+            
+            with open(json_filename, 'w', encoding='utf-8') as f:
+                json.dump(improved_data, f, ensure_ascii=False, indent=2)
+            
+            utils.log_message(f"데이터 저장 완료: {json_filename}")
+            
+            # CSV 파일 생성
+            utils.log_message("=== CSV 파일 생성 ===")
+            csv_filename = f"data/phone_support_data_{timestamp}.csv"
+            
+            csv_data = []
+            for manufacturer, manufacturer_data in improved_data["manufacturers"].items():
+                for model in manufacturer_data["models"]:
+                    support_info = model["support_info"]
+                    if support_info and "sections" in support_info:
+                        for section in support_info["sections"]:
+                            for carrier_name, carrier_data in section["carriers"].items():
+                                row = {
+                                    "제조사": manufacturer,
+                                    "모델명": model["model_name"],
+                                    "모델번호": model["model_number"],
+                                    "통신사": carrier_name,
+                                    "요금제": carrier_data["plan_name"],
+                                    "월요금제": carrier_data.get("monthly_fee", ""),
+                                    "기기변경지원금": carrier_data["device_support"],
+                                    "번호이동지원금": carrier_data["number_port_support"],
+                                    "공시일": carrier_data["announcement_date"],
+                                    "섹션": section["section"]
+                                }
+                                csv_data.append(row)
+            
+            if csv_data:
+                import pandas as pd
+                df = pd.DataFrame(csv_data)
+                df.to_csv(csv_filename, index=False, encoding='utf-8-sig')
+                utils.log_message(f"CSV 파일 저장 완료: {csv_filename}")
+            
+            file_created = True  # 파일 생성 성공 표시
+            
+        except Exception as file_error:
+            utils.log_message(f"파일 저장 중 오류 발생: {file_error}")
+            file_created = False
         
         utils.log_message(f"총 수집된 모델 수: {improved_data['total_models']}개")
         utils.log_message("=== 수집 결과 요약 ===")
         for manufacturer, manufacturer_data in improved_data["manufacturers"].items():
             utils.log_message(f"{manufacturer}: {len(manufacturer_data['models'])}개 모델")
         
-        # Telegram 알림 전송
-        try:
-            # 환경변수에서 Telegram 설정 가져오기
-            telegram_bot_token = os.environ.get('TELEGRAM_BOT_TOKEN') or config.TELEGRAM_BOT_TOKEN
-            telegram_chat_id = os.environ.get('TELEGRAM_CHAT_ID') or config.TELEGRAM_CHAT_ID
-            
-            # 각 제조사별 지원금 정보 항목 수 계산
-            manufacturer_details = {}
-            total_support_items = 0
-            
-            for manufacturer, manufacturer_data in improved_data["manufacturers"].items():
-                support_items = 0
-                for model in manufacturer_data["models"]:
-                    support_info = model["support_info"]
-                    if support_info and "sections" in support_info:
-                        for section in support_info["sections"]:
-                            for carrier_name, carrier_data in section["carriers"].items():
-                                if carrier_data.get("device_support") or carrier_data.get("number_port_support"):
-                                    support_items += 1
+        # Telegram 알림 전송 (파일 생성 성공 시에만)
+        if file_created:
+            try:
+                # 환경변수에서 Telegram 설정 가져오기
+                telegram_bot_token = os.environ.get('TELEGRAM_BOT_TOKEN') or config.TELEGRAM_BOT_TOKEN
+                telegram_chat_id = os.environ.get('TELEGRAM_CHAT_ID') or config.TELEGRAM_CHAT_ID
                 
-                manufacturer_details[manufacturer] = {
-                    "models": len(manufacturer_data["models"]),
-                    "support_items": support_items
-                }
-                total_support_items += support_items
-            
-            # 결과 요약 메시지 생성
-            summary_message = f"""📱 <b>스마트초이스 크롤링 완료</b>
+                # 각 제조사별 지원금 정보 항목 수 계산
+                manufacturer_details = {}
+                total_support_items = 0
+                
+                for manufacturer, manufacturer_data in improved_data["manufacturers"].items():
+                    support_items = 0
+                    for model in manufacturer_data["models"]:
+                        support_info = model["support_info"]
+                        if support_info and "sections" in support_info:
+                            for section in support_info["sections"]:
+                                for carrier_name, carrier_data in section["carriers"].items():
+                                    if carrier_data.get("device_support") or carrier_data.get("number_port_support"):
+                                        support_items += 1
+                
+                    manufacturer_details[manufacturer] = {
+                        "models": len(manufacturer_data["models"]),
+                        "support_items": support_items
+                    }
+                    total_support_items += support_items
+                
+                # 결과 요약 메시지 생성
+                summary_message = f"""📱 <b>스마트초이스 크롤링 완료</b>
 
 📊 <b>수집 결과</b>
 • 총 모델 수: {improved_data['total_models']}개
@@ -931,23 +974,26 @@ def main():
 • 수집 시간: {improved_data['collection_date']}
 
 🏭 <b>제조사별 수집 현황</b>"""
-            
-            for manufacturer, details in manufacturer_details.items():
-                summary_message += f"\n• {manufacturer}: {details['models']}개 모델, {details['support_items']}개 지원금 정보"
-            
-            summary_message += f"""
+                
+                for manufacturer, details in manufacturer_details.items():
+                    summary_message += f"\n• {manufacturer}: {details['models']}개 모델, {details['support_items']}개 지원금 정보"
+                
+                summary_message += f"""
 
 📁 <b>저장 파일</b>
 • JSON: {json_filename}
 • CSV: {csv_filename}
 
 ✅ 크롤링이 성공적으로 완료되었습니다!"""
+                
+                # Telegram 메시지 전송
+                utils.send_telegram_message(summary_message, telegram_bot_token, telegram_chat_id)
+                
+            except Exception as e:
+                utils.log_message(f"Telegram 알림 전송 실패: {e}")
+        else:
+            utils.log_message("파일 생성 실패로 인해 Telegram 알림을 전송하지 않습니다.")
             
-            # Telegram 메시지 전송
-            utils.send_telegram_message(summary_message, telegram_bot_token, telegram_chat_id)
-            
-        except Exception as e:
-            utils.log_message(f"Telegram 알림 전송 실패: {e}")
     except Exception as e:
         error_message = f"❌ <b>스마트초이스 크롤링 오류</b>\n\n오류 내용: {str(e)}\n\n시간: {utils.get_current_datetime()}"
         

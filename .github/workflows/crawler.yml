@@ -49,6 +49,15 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update phone support data - $(date)"
-        git push 
+        
+        # data 폴더의 파일들이 있는지 확인
+        if [ -d "data" ] && [ "$(ls -A data)" ]; then
+          echo "데이터 파일이 발견되었습니다. 커밋을 진행합니다."
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "📱 스마트초이스 크롤링 데이터 업데이트 - $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+          echo "데이터 파일 커밋 및 푸시 완료"
+        else
+          echo "데이터 파일이 없습니다. 크롤링이 실패했거나 파일이 생성되지 않았습니다."
+          exit 1
+        fi 
