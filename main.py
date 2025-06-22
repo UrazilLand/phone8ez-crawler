@@ -31,7 +31,7 @@ class SmartChoiceCrawler:
         self.setup_driver()
     
     def setup_driver(self):
-        """WebDriver 설정 (Selenium 4 표준 방식)"""
+        """WebDriver 설정 (GitHub Actions 환경 최적화)"""
         try:
             utils.log_message("Chrome WebDriver 설정 중...")
             
@@ -54,15 +54,48 @@ class SmartChoiceCrawler:
             options.add_argument("--disable-renderer-backgrounding")
             options.add_argument("--disable-features=TranslateUI")
             options.add_argument("--disable-ipc-flooding-protection")
+            options.add_argument("--remote-debugging-port=9222")
 
-            # webdriver-manager를 사용하여 ChromeDriver 자동 관리
-            driver_path = ChromeDriverManager().install()
-            service = Service(driver_path)
-            
-            self.driver = webdriver.Chrome(service=service, options=options)
+            # GitHub Actions 환경에서 ChromeDriver 설정
+            try:
+                # 먼저 시스템에 설치된 ChromeDriver 사용 시도
+                self.driver = webdriver.Chrome(options=options)
+                utils.log_message("시스템 ChromeDriver 사용 성공")
+            except Exception as e1:
+                utils.log_message(f"시스템 ChromeDriver 실패: {e1}")
+                try:
+                    # webdriver-manager 사용
+                    from webdriver_manager.chrome import ChromeDriverManager
+                    driver_path = ChromeDriverManager().install()
+                    service = Service(driver_path)
+                    self.driver = webdriver.Chrome(service=service, options=options)
+                    utils.log_message(f"webdriver-manager ChromeDriver 사용 성공: {driver_path}")
+                except Exception as e2:
+                    utils.log_message(f"webdriver-manager 실패: {e2}")
+                    # 마지막 시도: 직접 경로 지정
+                    try:
+                        # GitHub Actions에서 일반적인 ChromeDriver 경로들
+                        possible_paths = [
+                            "/usr/bin/chromedriver",
+                            "/usr/local/bin/chromedriver",
+                            "/snap/bin/chromedriver"
+                        ]
+                        for path in possible_paths:
+                            try:
+                                service = Service(path)
+                                self.driver = webdriver.Chrome(service=service, options=options)
+                                utils.log_message(f"직접 경로 ChromeDriver 사용 성공: {path}")
+                                break
+                            except:
+                                continue
+                        else:
+                            raise Exception("모든 ChromeDriver 설정 방법 실패")
+                    except Exception as e3:
+                        utils.log_message(f"직접 경로 설정 실패: {e3}")
+                        raise Exception(f"ChromeDriver 설정 실패: {e1}, {e2}, {e3}")
             
             self.wait = WebDriverWait(self.driver, config.ELEMENT_WAIT)
-            utils.log_message(f"WebDriver 설정 완료 (ChromeDriver: {driver_path})")
+            utils.log_message("WebDriver 설정 완료")
             return True
 
         except Exception as e:
