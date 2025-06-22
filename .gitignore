@@ -129,8 +129,5 @@ dmypy.json
 .pyre/
 
 # Crawler specific
-*.json
-*.csv
-*.xlsx
 chromedriver
 chromedriver.exe 
