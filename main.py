@@ -491,6 +491,30 @@ class SmartChoiceCrawler:
             utils.log_message(f"선택하기 버튼 클릭 실패: {e}")
             return False
 
+    def extract_network_type(self, model_name):
+        """모델명에서 네트워크 타입(5G/LTE) 추출"""
+        try:
+            if not model_name:
+                return "Unknown"
+            
+            # 대괄호로 묶인 네트워크 타입 추출
+            if "[5G]" in model_name:
+                return "5G"
+            elif "[LTE]" in model_name:
+                return "LTE"
+            else:
+                # 대괄호가 없는 경우 모델명에서 5G/LTE 키워드 검색
+                model_upper = model_name.upper()
+                if "5G" in model_upper:
+                    return "5G"
+                elif "LTE" in model_upper:
+                    return "LTE"
+                else:
+                    return "Unknown"
+        except Exception as e:
+            utils.log_message(f"네트워크 타입 추출 실패: {e}")
+            return "Unknown"
+
     def extract_model_info(self, index):
         """특정 인덱스의 모델 정보 추출"""
         try:
@@ -513,7 +537,10 @@ class SmartChoiceCrawler:
                     else:
                         model_name = full_text
                     
-                    utils.log_message(f"모델 정보 추출: {model_name} ({model_number})")
+                    # 네트워크 타입 추출
+                    network_type = self.extract_network_type(model_name)
+                    
+                    utils.log_message(f"모델 정보 추출: {model_name} ({model_number}) - {network_type}")
                 else:
                     utils.log_message(f"인덱스 {index}가 범위를 벗어났습니다.")
                     return None
@@ -524,7 +551,8 @@ class SmartChoiceCrawler:
             
             return {
                 "model_name": model_name,
-                "model_number": model_number
+                "model_number": model_number,
+                "network_type": network_type
             }
             
         except Exception as e:
@@ -835,14 +863,27 @@ def main():
                 # 지원금 정보 추출
                 support_info = crawler.extract_support_info()
                 if support_info:
-                    # 모델 정보 구성
-                    model_data = {
-                        "index": index,
-                        "model_name": model_info["model_name"] if model_info else model_name,
-                        "model_number": model_info["model_number"] if model_info else f"INDEX_{index}",
-                        "release_date": release_date,
-                        "support_info": support_info
-                    }
+                    # 모델 정보 구성 (model_info가 None인 경우 기본값 사용)
+                    if model_info:
+                        model_data = {
+                            "index": index,
+                            "model_name": model_info["model_name"],
+                            "model_number": model_info["model_number"],
+                            "network_type": model_info["network_type"],
+                            "release_date": release_date,
+                            "support_info": support_info
+                        }
+                    else:
+                        # model_info가 None인 경우 기본값 사용
+                        model_data = {
+                            "index": index,
+                            "model_name": model_name,
+                            "model_number": f"INDEX_{index}",
+                            "network_type": "Unknown",
+                            "release_date": release_date,
+                            "support_info": support_info
+                        }
+                    
                     manufacturer_data["models"].append(model_data)
                     collected_data["total_models"] += 1
                     
@@ -864,18 +905,23 @@ def main():
         # 데이터 구조 개선: 통신사별 요금제 중복 제거 및 모델 정보 상단 추가
         utils.log_message("=== 데이터 구조 개선 및 정리 ===")
         
-        # 모든 통신사별 월 요금제 금액 수집
-        all_monthly_fees = {"SK": set(), "KT": set(), "LG": set()}
+        # 모든 통신사별 월 요금제 금액 수집 (5G/LTE 분류)
+        all_monthly_fees = {
+            "SK": {"5G": set(), "LTE": set(), "Unknown": set()},
+            "KT": {"5G": set(), "LTE": set(), "Unknown": set()},
+            "LG": {"5G": set(), "LTE": set(), "Unknown": set()}
+        }
         all_prices = []
         all_model_info = []  # 모델 정보를 저장할 리스트
         
         for manufacturer, manufacturer_data in collected_data["manufacturers"].items():
             for model in manufacturer_data["models"]:
-                # 모델 정보 수집 (모델번호, 모델명, 출고가)
+                # 모델 정보 수집 (모델번호, 모델명, 출고가, 네트워크 타입)
                 model_info = {
                     "manufacturer": manufacturer,
                     "model_number": model["model_number"],
                     "model_name": model["model_name"],
+                    "network_type": model["network_type"],
                     "max_price": 0
                 }
                 
@@ -883,10 +929,12 @@ def main():
                 if support_info and "sections" in support_info:
                     for section in support_info["sections"]:
                         for carrier_name, carrier_data in section["carriers"].items():
-                            # 월 요금제 금액 수집
+                            # 월 요금제 금액 수집 (모델의 네트워크 타입 기준으로 분류)
                             if carrier_data.get("monthly_fee") and carrier_data["monthly_fee"] != "":
                                 if isinstance(carrier_data["monthly_fee"], int):
-                                    all_monthly_fees[carrier_name].add(carrier_data["monthly_fee"])
+                                    network_type = model["network_type"]
+                                    if network_type in ["5G", "LTE", "Unknown"] and carrier_name in all_monthly_fees:
+                                        all_monthly_fees[carrier_name][network_type].add(carrier_data["monthly_fee"])
                                 
                             # 출고가 수집 (숫자로 변환)
                             if carrier_data["price"] and carrier_data["price"] != "해당사항 없음":
@@ -906,9 +954,11 @@ def main():
         improved_data = {
             "collection_date": collected_data["collection_date"],
             "total_models": collected_data["total_models"],
-            "model_info": all_model_info,  # 모든 모델 정보 (모델번호, 모델명, 출고가)
+            "model_info": all_model_info,  # 모든 모델 정보 (모델번호, 모델명, 출고가, 네트워크 타입)
             "carrier_monthly_fees": {
-                carrier: sorted(list(fees)) for carrier, fees in all_monthly_fees.items()
+                carrier: {
+                    network_type: sorted(list(fees)) for network_type, fees in carrier_fees.items()
+                } for carrier, carrier_fees in all_monthly_fees.items()
             },
             "manufacturers": collected_data["manufacturers"]
         }
@@ -946,6 +996,7 @@ def main():
                                     "제조사": manufacturer,
                                     "모델명": model["model_name"],
                                     "모델번호": model["model_number"],
+                                    "모델_네트워크타입": model["network_type"],
                                     "통신사": carrier_name,
                                     "요금제": carrier_data["plan_name"],
                                     "월요금제": carrier_data.get("monthly_fee", ""),
@@ -961,6 +1012,7 @@ def main():
                 df = pd.DataFrame(csv_data)
                 df.to_csv(csv_filename, index=False, encoding='utf-8-sig')
                 utils.log_message(f"CSV 파일 저장 완료: {csv_filename}")
+                
                 file_created = True  # 파일 생성 성공 표시
             else:
                 utils.log_message("CSV 데이터가 없습니다. CSV 파일을 저장하지 않습니다.")
@@ -990,6 +1042,13 @@ def main():
                 manufacturer_details = {}
                 total_support_items = 0
                 
+                # 네트워크 타입별 통계
+                network_stats = {"5G": 0, "LTE": 0}
+                carrier_network_stats = {
+                    "5G": {"SK": 0, "KT": 0, "LG": 0},
+                    "LTE": {"SK": 0, "KT": 0, "LG": 0}
+                }
+                
                 for manufacturer, manufacturer_data in improved_data["manufacturers"].items():
                     support_items = 0
                     for model in manufacturer_data["models"]:
@@ -999,6 +1058,13 @@ def main():
                                 for carrier_name, carrier_data in section["carriers"].items():
                                     if carrier_data.get("device_support") or carrier_data.get("number_port_support"):
                                         support_items += 1
+                                        
+                                        # 네트워크 타입별 통계
+                                        network_type = model["network_type"]
+                                        if network_type in ["5G", "LTE"]:
+                                            network_stats[network_type] += 1
+                                            if carrier_name in carrier_network_stats[network_type]:
+                                                carrier_network_stats[network_type][carrier_name] += 1
                 
                     manufacturer_details[manufacturer] = {
                         "models": len(manufacturer_data["models"]),
@@ -1018,6 +1084,21 @@ def main():
                 
                 for manufacturer, details in manufacturer_details.items():
                     summary_message += f"\n• {manufacturer}: {details['models']}개 모델, {details['support_items']}개 지원금 정보"
+                
+                summary_message += f"""
+
+📡 <b>네트워크 타입별 요금제 현황</b>
+• 5G 요금제: {network_stats['5G']}개"""
+                
+                for carrier in ["SK", "KT", "LG"]:
+                    count = carrier_network_stats["5G"][carrier]
+                    summary_message += f"\n  - {carrier}: {count}개"
+                
+                summary_message += f"\n• LTE 요금제: {network_stats['LTE']}개"
+                
+                for carrier in ["SK", "KT", "LG"]:
+                    count = carrier_network_stats["LTE"][carrier]
+                    summary_message += f"\n  - {carrier}: {count}개"
                 
                 summary_message += f"""
 

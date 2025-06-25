@@ -1,620 +1,733 @@
 {
-  "collection_date": "2025-06-22 17:29:43",
+  "collection_date": "2025-06-25 17:16:16",
   "total_models": 95,
   "model_info": [
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A366N",
       "model_name": "[5G] 갤럭시 A36 5G",
+      "network_type": "5G",
       "max_price": 499400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-M166S",
       "model_name": "[5G] 갤럭시 와이드 8",
+      "network_type": "5G",
       "max_price": 374000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S937N",
       "model_name": "[5G] 갤럭시 S25 엣지 (256G)",
+      "network_type": "5G",
       "max_price": 1496000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S937N_512G",
       "model_name": "[5G] 갤럭시 S25 엣지 (512G)",
+      "network_type": "5G",
       "max_price": 1639000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S937N0512",
       "model_name": "[5G] 갤럭시 S25 엣지 (512G) ONE",
+      "network_type": "5G",
       "max_price": 1639000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A166L",
       "model_name": "[5G] 갤럭시 버디4",
+      "network_type": "5G",
       "max_price": 399300
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S931NK_CROCS",
       "model_name": "[5G] 갤럭시 S25 크록스 토이스토리 에디션",
+      "network_type": "5G",
       "max_price": 1177000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S931N",
       "model_name": "[5G] 갤럭시 S25",
+      "network_type": "5G",
       "max_price": 1155000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S931N_512G",
       "model_name": "[5G] 갤럭시 S25 (512GB)",
+      "network_type": "5G",
       "max_price": 1298000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S938N",
       "model_name": "[5G] 갤럭시 S25 울트라",
+      "network_type": "5G",
       "max_price": 1698400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S938N_1T",
       "model_name": "[5G] 갤럭시 S25 울트라 (1TB)",
+      "network_type": "5G",
       "max_price": 2127400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S938N_512G",
       "model_name": "[5G] 갤럭시 S25 울트라 (512GB)",
+      "network_type": "5G",
       "max_price": 1841400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S936N",
       "model_name": "[5G] 갤럭시 S25+",
+      "network_type": "5G",
       "max_price": 1353000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S936N_512G",
       "model_name": "[5G] 갤럭시 S25+ (512GB)",
+      "network_type": "5G",
       "max_price": 1496000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "AT-M140S",
       "model_name": "[LTE] 스타일 폴더2",
+      "network_type": "LTE",
       "max_price": 237600
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A165N-UM",
       "model_name": "[LTE] 무너 키즈폰",
+      "network_type": "LTE",
       "max_price": 365200
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A165NK-KP",
       "model_name": "[LTE] 포차코 키즈폰",
+      "network_type": "LTE",
       "max_price": 349800
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S721N",
       "model_name": "[5G] 갤럭시 S24 FE",
+      "network_type": "5G",
       "max_price": 946000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A165N",
       "model_name": "[LTE] 갤럭시 A16",
+      "network_type": "LTE",
       "max_price": 319000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F958N",
       "model_name": "[5G] 갤럭시 Z폴드 스페셜 에디션",
+      "network_type": "5G",
       "max_price": 2789600
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A256NK-MOM",
       "model_name": "[5G] KT 맘편안폰3",
+      "network_type": "5G",
       "max_price": 499400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A556S",
       "model_name": "[5G] 갤럭시 퀀텀5",
+      "network_type": "5G",
       "max_price": 618200
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F956N_1T",
       "model_name": "[5G] 갤럭시 Z 폴드6 (1TB)",
+      "network_type": "5G",
       "max_price": 2704900
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F956N",
       "model_name": "[5G] 갤럭시 Z 폴드6 (256GB)",
+      "network_type": "5G",
       "max_price": 2229700
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F956N_512G",
       "model_name": "[5G] 갤럭시 Z 폴드6 (512GB)",
+      "network_type": "5G",
       "max_price": 2388100
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F741N",
       "model_name": "[5G] 갤럭시 Z 플립6 (256GB)",
+      "network_type": "5G",
       "max_price": 1485000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F741N_512G",
       "model_name": "[5G] 갤럭시 Z 플립6 (512GB)",
+      "network_type": "5G",
       "max_price": 1643400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F741NK_MARU",
       "model_name": "[5G] 갤럭시 Z 플립6 마루는강쥐 에디션",
+      "network_type": "5G",
       "max_price": 1507000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F741N-HG",
       "model_name": "[5G] 갤럭시 Z 플립6 화산귀한 에디션",
+      "network_type": "5G",
       "max_price": 1562000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A356N",
       "model_name": "[5G] 갤럭시 A35",
+      "network_type": "5G",
       "max_price": 499400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-M156S",
       "model_name": "[5G] 갤럭시 Wide7",
+      "network_type": "5G",
       "max_price": 374000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S911NK_PYE",
       "model_name": "[5G] 갤럭시 S23 프리미엄 Y에디션",
+      "network_type": "5G",
       "max_price": 1199000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A156L",
       "model_name": "[5G] 갤럭시 버디3",
+      "network_type": "5G",
       "max_price": 399300
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A155N",
       "model_name": "[LTE] 갤럭시 A15",
+      "network_type": "LTE",
       "max_price": 319000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A256N",
       "model_name": "[5G] 갤럭시 A25",
+      "network_type": "5G",
       "max_price": 449900
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S921N",
       "model_name": "[5G] 갤럭시 S24",
+      "network_type": "5G",
       "max_price": 1155000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S921N_512G",
       "model_name": "[5G] 갤럭시 S24 (512GB)",
+      "network_type": "5G",
       "max_price": 1298000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S928N",
       "model_name": "[5G] 갤럭시 S24 울트라",
+      "network_type": "5G",
       "max_price": 1698400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S928N_1T",
       "model_name": "[5G] 갤럭시 S24 울트라 (1TB)",
+      "network_type": "5G",
       "max_price": 2127400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S928N_512G",
       "model_name": "[5G] 갤럭시 S24 울트라 (512GB)",
+      "network_type": "5G",
       "max_price": 1841400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S928N-PE",
       "model_name": "[5G] 갤럭시 S24 울트라 포동",
+      "network_type": "5G",
       "max_price": 1885400
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S926N",
       "model_name": "[5G] 갤럭시 S24+",
+      "network_type": "5G",
       "max_price": 1353000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S926N_512G",
       "model_name": "[5G] 갤럭시 S24+ (512GB)",
+      "network_type": "5G",
       "max_price": 1496000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-A245N-UC2",
       "model_name": "[LTE] U+키즈폰 춘식이2",
+      "network_type": "LTE",
       "max_price": 396000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-S711N",
       "model_name": "[5G] 갤럭시 S23 FE",
+      "network_type": "5G",
       "max_price": 847000
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-M446K",
       "model_name": "[5G] 갤럭시 Jump3",
+      "network_type": "5G",
       "max_price": 438900
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F946N",
       "model_name": "[5G] 갤럭시 Z 폴드5",
+      "network_type": "5G",
       "max_price": 2097700
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F946N_512G",
       "model_name": "[5G] 갤럭시 Z 폴드5 (512G)",
+      "network_type": "5G",
       "max_price": 2218700
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F731N",
       "model_name": "[5G] 갤럭시 Z 플립5",
+      "network_type": "5G",
       "max_price": 1399200
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F731N_512G",
       "model_name": "[5G] 갤럭시 Z 플립5 (512G)",
+      "network_type": "5G",
       "max_price": 1520200
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F731N-GT2",
       "model_name": "[5G] 갤럭시 Z 플립5 가비지타임 장도고 에디션",
+      "network_type": "5G",
       "max_price": 1564200
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F731N-GT1",
       "model_name": "[5G] 갤럭시 Z 플립5 가비지타임 지상고 에디션",
+      "network_type": "5G",
       "max_price": 1564200
     },
     {
       "manufacturer": "삼성전자",
       "model_number": "SM-F731NK512_AIR",
       "model_name": "[5G] 갤럭시 Z 플립5 대한항공 에디션",
+      "network_type": "5G",
       "max_price": 1498200
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16E_128GB",
       "model_name": "[5G] 아이폰 16E (128G)",
+      "network_type": "5G",
       "max_price": 990000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16E_256GB",
       "model_name": "[5G] 아이폰 16E (256G)",
+      "network_type": "5G",
       "max_price": 1133000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16E_512GB",
       "model_name": "[5G] 아이폰 16E (512G)",
+      "network_type": "5G",
       "max_price": 1430000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16_128GB",
       "model_name": "[5G] 아이폰 16 (128G)",
+      "network_type": "5G",
       "max_price": 1243000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16_256GB",
       "model_name": "[5G] 아이폰 16 (256G)",
+      "network_type": "5G",
       "max_price": 1397000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16_512GB",
       "model_name": "[5G] 아이폰 16 (512G)",
+      "network_type": "5G",
       "max_price": 1694000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16PL_128GB",
       "model_name": "[5G] 아이폰 16 PLUS (128G)",
+      "network_type": "5G",
       "max_price": 1342000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16PL_256GB",
       "model_name": "[5G] 아이폰 16 PLUS (256G)",
+      "network_type": "5G",
       "max_price": 1496000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16PL_512GB",
       "model_name": "[5G] 아이폰 16 PLUS (512G)",
+      "network_type": "5G",
       "max_price": 1793000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16P_128GB",
       "model_name": "[5G] 아이폰 16 PRO (128G)",
+      "network_type": "5G",
       "max_price": 1540000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16P_1TB",
       "model_name": "[5G] 아이폰 16 PRO (1T)",
+      "network_type": "5G",
       "max_price": 2299000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16P_256GB",
       "model_name": "[5G] 아이폰 16 PRO (256G)",
+      "network_type": "5G",
       "max_price": 1694000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16P_512GB",
       "model_name": "[5G] 아이폰 16 PRO (512G)",
+      "network_type": "5G",
       "max_price": 1991000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16PM_1TB",
       "model_name": "[5G] 아이폰 16 PRO MAX (1T)",
+      "network_type": "5G",
       "max_price": 2497000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16PM_256GB",
       "model_name": "[5G] 아이폰 16 PRO MAX (256G)",
+      "network_type": "5G",
       "max_price": 1892000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP16PM_512GB",
       "model_name": "[5G] 아이폰 16 PRO MAX (512G)",
+      "network_type": "5G",
       "max_price": 2200000
     },
     {
       "manufacturer": "애플",
       "model_number": "AIP13-128WHE",
       "model_name": "[5G] 아이폰 13 열공 에디션",
+      "network_type": "5G",
       "max_price": 781000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15_128GB",
       "model_name": "[5G] 아이폰 15 (128G)",
+      "network_type": "5G",
       "max_price": 1243000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15_256GB",
       "model_name": "[5G] 아이폰 15 (256G)",
+      "network_type": "5G",
       "max_price": 1397000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15_512GB",
       "model_name": "[5G] 아이폰 15 (512G)",
+      "network_type": "5G",
       "max_price": 1694000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15PL_128GB",
       "model_name": "[5G] 아이폰 15 Plus (128G)",
+      "network_type": "5G",
       "max_price": 1342000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15PL_256GB",
       "model_name": "[5G] 아이폰 15 Plus (256G)",
+      "network_type": "5G",
       "max_price": 1496000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15PL_512GB",
       "model_name": "[5G] 아이폰 15 Plus (512G)",
+      "network_type": "5G",
       "max_price": 1793000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15P_128GB",
       "model_name": "[5G] 아이폰 15 Pro (128G)",
+      "network_type": "5G",
       "max_price": 1540000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15P_1TB",
       "model_name": "[5G] 아이폰 15 Pro (1TB)",
+      "network_type": "5G",
       "max_price": 2299000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15P_256GB",
       "model_name": "[5G] 아이폰 15 Pro (256G)",
+      "network_type": "5G",
       "max_price": 1694000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15P_512GB",
       "model_name": "[5G] 아이폰 15 Pro (512G)",
+      "network_type": "5G",
       "max_price": 1991000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15PM_1TB",
       "model_name": "[5G] 아이폰 15 Pro Max (1TB)",
+      "network_type": "5G",
       "max_price": 2497000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15PM_256GB",
       "model_name": "[5G] 아이폰 15 Pro Max (256G)",
+      "network_type": "5G",
       "max_price": 1892000
     },
     {
       "manufacturer": "애플",
       "model_number": "IP15PM_512GB",
       "model_name": "[5G] 아이폰 15 Pro Max (512G)",
+      "network_type": "5G",
       "max_price": 2200000
     },
     {
       "manufacturer": "기타",
       "model_number": "XT2363-3K",
       "model_name": "[5G] G34-5G",
+      "network_type": "5G",
       "max_price": 211200
     },
     {
       "manufacturer": "기타",
       "model_number": "Z2339K",
       "model_name": "[LTE] 클래식 폴더",
+      "network_type": "LTE",
       "max_price": 205700
     },
     {
       "manufacturer": "기타",
       "model_number": "X-RN14P",
       "model_name": "[5G] 샤오미 레드미 노트14 프로 5G",
+      "network_type": "5G",
       "max_price": 399300
     },
     {
       "manufacturer": "기타",
       "model_number": "MI-RMN14P5GK512",
       "model_name": "[5G] 샤오미 레드미 노트14 프로 5G 512",
+      "network_type": "5G",
       "max_price": 499400
     },
     {
       "manufacturer": "기타",
       "model_number": "AT-M150S",
       "model_name": "[LTE] ZEM폰 포켓몬에디션3",
+      "network_type": "LTE",
       "max_price": 326700
     },
     {
       "manufacturer": "기타",
       "model_number": "X-RN14C",
       "model_name": "[LTE] 샤오미 레드미 노트 14C",
+      "network_type": "LTE",
       "max_price": 199100
     },
     {
       "manufacturer": "기타",
       "model_number": "X-RN14C_8",
       "model_name": "[LTE] 샤오미 레드미 노트 14C_8G",
+      "network_type": "LTE",
       "max_price": 199100
     },
     {
       "manufacturer": "기타",
       "model_number": "X-RN13P_OE",
       "model_name": "[5G] 샤오미 레드미 노트13 프로 5G",
+      "network_type": "5G",
       "max_price": 399300
     },
     {
       "manufacturer": "기타",
       "model_number": "X-RN13P_12_OE",
       "model_name": "[5G] 샤오미 레드미 노트13 프로 5G 512",
+      "network_type": "5G",
       "max_price": 449900
     },
     {
       "manufacturer": "기타",
       "model_number": "X-RN13_OE",
       "model_name": "[LTE] 샤오미 레드미 노트13",
+      "network_type": "LTE",
       "max_price": 299200
     },
     {
       "manufacturer": "기타",
       "model_number": "AT-M130S",
       "model_name": "[LTE] ZEM폰 포켓몬에디션2",
+      "network_type": "LTE",
       "max_price": 319000
     },
     {
       "manufacturer": "기타",
       "model_number": "AT-M130K",
       "model_name": "[LTE] 시나모롤 키즈폰",
+      "network_type": "LTE",
       "max_price": 320100
     }
   ],
   "carrier_monthly_fees": {
-    "SK": [
-      33000,
-      39000,
-      43000,
-      45000,
-      50000,
-      59000,
-      66000,
-      69000,
-      79000,
-      100000,
-      109000,
-      125000
-    ],
-    "KT": [
-      33000,
-      37000,
-      44000,
-      45000,
-      49000,
-      58000,
-      65000,
-      69000,
-      89000,
-      110000,
-      130000
-    ],
-    "LG": [
-      33000,
-      37000,
-      44000,
-      47000,
-      49000,
-      59000,
-      66000,
-      69000,
-      75000,
-      85000,
-      105000,
-      130000
-    ]
+    "SK": {
+      "5G": [
+        39000,
+        45000,
+        59000,
+        66000,
+        79000,
+        109000,
+        125000
+      ],
+      "LTE": [
+        33000,
+        43000,
+        50000,
+        69000,
+        79000,
+        100000
+      ],
+      "Unknown": []
+    },
+    "KT": {
+      "5G": [
+        37000,
+        45000,
+        58000,
+        65000,
+        69000,
+        110000,
+        130000
+      ],
+      "LTE": [
+        33000,
+        44000,
+        49000,
+        69000,
+        89000
+      ],
+      "Unknown": []
+    },
+    "LG": {
+      "5G": [
+        37000,
+        47000,
+        59000,
+        66000,
+        75000,
+        105000,
+        130000
+      ],
+      "LTE": [
+        33000,
+        44000,
+        49000,
+        69000,
+        85000,
+        105000
+      ],
+      "Unknown": []
+    }
   },
   "manufacturers": {
     "삼성전자": {
@@ -624,6 +737,7 @@
           "index": 0,
           "model_name": "[5G] 갤럭시 A36 5G",
           "model_number": "SM-A366N",
+          "network_type": "5G",
           "release_date": "2025-06",
           "support_info": {
             "carriers": {},
@@ -859,6 +973,7 @@
           "index": 1,
           "model_name": "[5G] 갤럭시 와이드 8",
           "model_number": "SM-M166S",
+          "network_type": "5G",
           "release_date": "2025-06",
           "support_info": {
             "carriers": {},
@@ -1094,6 +1209,7 @@
           "index": 2,
           "model_name": "[5G] 갤럭시 S25 엣지 (256G)",
           "model_number": "SM-S937N",
+          "network_type": "5G",
           "release_date": "2025-05",
           "support_info": {
             "carriers": {},
@@ -1329,6 +1445,7 @@
           "index": 3,
           "model_name": "[5G] 갤럭시 S25 엣지 (512G)",
           "model_number": "SM-S937N_512G",
+          "network_type": "5G",
           "release_date": "2025-05",
           "support_info": {
             "carriers": {},
@@ -1564,6 +1681,7 @@
           "index": 4,
           "model_name": "[5G] 갤럭시 S25 엣지 (512G) ONE",
           "model_number": "SM-S937N0512",
+          "network_type": "5G",
           "release_date": "2025-05",
           "support_info": {
             "carriers": {},
@@ -1799,6 +1917,7 @@
           "index": 5,
           "model_name": "[5G] 갤럭시 버디4",
           "model_number": "SM-A166L",
+          "network_type": "5G",
           "release_date": "2025-05",
           "support_info": {
             "carriers": {},
@@ -2034,6 +2153,7 @@
           "index": 6,
           "model_name": "[5G] 갤럭시 S25 크록스 토이스토리 에디션",
           "model_number": "SM-S931NK_CROCS",
+          "network_type": "5G",
           "release_date": "2025-04",
           "support_info": {
             "carriers": {},
@@ -2269,6 +2389,7 @@
           "index": 7,
           "model_name": "[5G] 갤럭시 S25",
           "model_number": "SM-S931N",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -2504,6 +2625,7 @@
           "index": 8,
           "model_name": "[5G] 갤럭시 S25 (512GB)",
           "model_number": "SM-S931N_512G",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -2739,6 +2861,7 @@
           "index": 9,
           "model_name": "[5G] 갤럭시 S25 울트라",
           "model_number": "SM-S938N",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -2974,6 +3097,7 @@
           "index": 10,
           "model_name": "[5G] 갤럭시 S25 울트라 (1TB)",
           "model_number": "SM-S938N_1T",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -3209,6 +3333,7 @@
           "index": 11,
           "model_name": "[5G] 갤럭시 S25 울트라 (512GB)",
           "model_number": "SM-S938N_512G",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -3444,6 +3569,7 @@
           "index": 12,
           "model_name": "[5G] 갤럭시 S25+",
           "model_number": "SM-S936N",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -3679,6 +3805,7 @@
           "index": 13,
           "model_name": "[5G] 갤럭시 S25+ (512GB)",
           "model_number": "SM-S936N_512G",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -3914,6 +4041,7 @@
           "index": 14,
           "model_name": "[LTE] 스타일 폴더2",
           "model_number": "AT-M140S",
+          "network_type": "LTE",
           "release_date": "2025-01",
           "support_info": {
             "carriers": {},
@@ -4117,6 +4245,7 @@
           "index": 15,
           "model_name": "[LTE] 무너 키즈폰",
           "model_number": "SM-A165N-UM",
+          "network_type": "LTE",
           "release_date": "2024-12",
           "support_info": {
             "carriers": {},
@@ -4320,6 +4449,7 @@
           "index": 16,
           "model_name": "[LTE] 포차코 키즈폰",
           "model_number": "SM-A165NK-KP",
+          "network_type": "LTE",
           "release_date": "2024-12",
           "support_info": {
             "carriers": {},
@@ -4523,6 +4653,7 @@
           "index": 17,
           "model_name": "[5G] 갤럭시 S24 FE",
           "model_number": "SM-S721N",
+          "network_type": "5G",
           "release_date": "2024-11",
           "support_info": {
             "carriers": {},
@@ -4758,6 +4889,7 @@
           "index": 18,
           "model_name": "[LTE] 갤럭시 A16",
           "model_number": "SM-A165N",
+          "network_type": "LTE",
           "release_date": "2024-11",
           "support_info": {
             "carriers": {},
@@ -4961,6 +5093,7 @@
           "index": 19,
           "model_name": "[5G] 갤럭시 Z폴드 스페셜 에디션",
           "model_number": "SM-F958N",
+          "network_type": "5G",
           "release_date": "2024-10",
           "support_info": {
             "carriers": {},
@@ -5196,6 +5329,7 @@
           "index": 20,
           "model_name": "[5G] KT 맘편안폰3",
           "model_number": "SM-A256NK-MOM",
+          "network_type": "5G",
           "release_date": "2024-08",
           "support_info": {
             "carriers": {},
@@ -5431,6 +5565,7 @@
           "index": 21,
           "model_name": "[5G] 갤럭시 퀀텀5",
           "model_number": "SM-A556S",
+          "network_type": "5G",
           "release_date": "2024-08",
           "support_info": {
             "carriers": {},
@@ -5666,6 +5801,7 @@
           "index": 22,
           "model_name": "[5G] 갤럭시 Z 폴드6 (1TB)",
           "model_number": "SM-F956N_1T",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -5901,6 +6037,7 @@
           "index": 23,
           "model_name": "[5G] 갤럭시 Z 폴드6 (256GB)",
           "model_number": "SM-F956N",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -6136,6 +6273,7 @@
           "index": 24,
           "model_name": "[5G] 갤럭시 Z 폴드6 (512GB)",
           "model_number": "SM-F956N_512G",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -6371,6 +6509,7 @@
           "index": 25,
           "model_name": "[5G] 갤럭시 Z 플립6 (256GB)",
           "model_number": "SM-F741N",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -6606,6 +6745,7 @@
           "index": 26,
           "model_name": "[5G] 갤럭시 Z 플립6 (512GB)",
           "model_number": "SM-F741N_512G",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -6841,6 +6981,7 @@
           "index": 27,
           "model_name": "[5G] 갤럭시 Z 플립6 마루는강쥐 에디션",
           "model_number": "SM-F741NK_MARU",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -7076,6 +7217,7 @@
           "index": 28,
           "model_name": "[5G] 갤럭시 Z 플립6 화산귀한 에디션",
           "model_number": "SM-F741N-HG",
+          "network_type": "5G",
           "release_date": "2024-07",
           "support_info": {
             "carriers": {},
@@ -7311,6 +7453,7 @@
           "index": 29,
           "model_name": "[5G] 갤럭시 A35",
           "model_number": "SM-A356N",
+          "network_type": "5G",
           "release_date": "2024-06",
           "support_info": {
             "carriers": {},
@@ -7546,6 +7689,7 @@
           "index": 30,
           "model_name": "[5G] 갤럭시 Wide7",
           "model_number": "SM-M156S",
+          "network_type": "5G",
           "release_date": "2024-06",
           "support_info": {
             "carriers": {},
@@ -7781,6 +7925,7 @@
           "index": 31,
           "model_name": "[5G] 갤럭시 S23 프리미엄 Y에디션",
           "model_number": "SM-S911NK_PYE",
+          "network_type": "5G",
           "release_date": "2024-05",
           "support_info": {
             "carriers": {},
@@ -8016,6 +8161,7 @@
           "index": 32,
           "model_name": "[5G] 갤럭시 버디3",
           "model_number": "SM-A156L",
+          "network_type": "5G",
           "release_date": "2024-04",
           "support_info": {
             "carriers": {},
@@ -8251,6 +8397,7 @@
           "index": 33,
           "model_name": "[LTE] 갤럭시 A15",
           "model_number": "SM-A155N",
+          "network_type": "LTE",
           "release_date": "2024-03",
           "support_info": {
             "carriers": {},
@@ -8454,6 +8601,7 @@
           "index": 34,
           "model_name": "[5G] 갤럭시 A25",
           "model_number": "SM-A256N",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -8689,6 +8837,7 @@
           "index": 35,
           "model_name": "[5G] 갤럭시 S24",
           "model_number": "SM-S921N",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -8700,9 +8849,9 @@
                     "carrier_name": "SK",
                     "price": "1,155,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -8732,9 +8881,9 @@
                     "carrier_name": "SK",
                     "price": "1,155,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -8764,9 +8913,9 @@
                     "carrier_name": "SK",
                     "price": "1,155,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -8796,9 +8945,9 @@
                     "carrier_name": "SK",
                     "price": "1,155,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -8828,9 +8977,9 @@
                     "carrier_name": "SK",
                     "price": "1,155,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -8862,7 +9011,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -8894,7 +9043,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -8924,6 +9073,7 @@
           "index": 36,
           "model_name": "[5G] 갤럭시 S24 (512GB)",
           "model_number": "SM-S921N_512G",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -8935,9 +9085,9 @@
                     "carrier_name": "SK",
                     "price": "1,298,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -8967,9 +9117,9 @@
                     "carrier_name": "SK",
                     "price": "1,298,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -8999,9 +9149,9 @@
                     "carrier_name": "SK",
                     "price": "1,298,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -9031,9 +9181,9 @@
                     "carrier_name": "SK",
                     "price": "1,298,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -9063,9 +9213,9 @@
                     "carrier_name": "SK",
                     "price": "1,298,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -9097,7 +9247,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -9129,7 +9279,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -9159,6 +9309,7 @@
           "index": 37,
           "model_name": "[5G] 갤럭시 S24 울트라",
           "model_number": "SM-S928N",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -9170,9 +9321,9 @@
                     "carrier_name": "SK",
                     "price": "1,698,400원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -9202,9 +9353,9 @@
                     "carrier_name": "SK",
                     "price": "1,698,400원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -9234,9 +9385,9 @@
                     "carrier_name": "SK",
                     "price": "1,698,400원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -9266,9 +9417,9 @@
                     "carrier_name": "SK",
                     "price": "1,698,400원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -9298,9 +9449,9 @@
                     "carrier_name": "SK",
                     "price": "1,698,400원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -9332,7 +9483,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -9364,7 +9515,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -9394,6 +9545,7 @@
           "index": 38,
           "model_name": "[5G] 갤럭시 S24 울트라 (1TB)",
           "model_number": "SM-S928N_1T",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -9405,9 +9557,9 @@
                     "carrier_name": "SK",
                     "price": "2,127,400원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -9437,9 +9589,9 @@
                     "carrier_name": "SK",
                     "price": "2,127,400원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -9469,9 +9621,9 @@
                     "carrier_name": "SK",
                     "price": "2,127,400원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -9501,9 +9653,9 @@
                     "carrier_name": "SK",
                     "price": "2,127,400원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -9533,9 +9685,9 @@
                     "carrier_name": "SK",
                     "price": "2,127,400원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -9567,7 +9719,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -9599,7 +9751,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -9629,6 +9781,7 @@
           "index": 39,
           "model_name": "[5G] 갤럭시 S24 울트라 (512GB)",
           "model_number": "SM-S928N_512G",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -9640,9 +9793,9 @@
                     "carrier_name": "SK",
                     "price": "1,841,400원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -9672,9 +9825,9 @@
                     "carrier_name": "SK",
                     "price": "1,841,400원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -9704,9 +9857,9 @@
                     "carrier_name": "SK",
                     "price": "1,841,400원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -9736,9 +9889,9 @@
                     "carrier_name": "SK",
                     "price": "1,841,400원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -9768,9 +9921,9 @@
                     "carrier_name": "SK",
                     "price": "1,841,400원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -9802,7 +9955,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -9834,7 +9987,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -9864,6 +10017,7 @@
           "index": 40,
           "model_name": "[5G] 갤럭시 S24 울트라 포동",
           "model_number": "SM-S928N-PE",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -10099,6 +10253,7 @@
           "index": 41,
           "model_name": "[5G] 갤럭시 S24+",
           "model_number": "SM-S926N",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -10110,9 +10265,9 @@
                     "carrier_name": "SK",
                     "price": "1,353,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -10142,9 +10297,9 @@
                     "carrier_name": "SK",
                     "price": "1,353,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -10174,9 +10329,9 @@
                     "carrier_name": "SK",
                     "price": "1,353,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -10206,9 +10361,9 @@
                     "carrier_name": "SK",
                     "price": "1,353,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -10238,9 +10393,9 @@
                     "carrier_name": "SK",
                     "price": "1,353,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -10272,7 +10427,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -10304,7 +10459,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -10334,6 +10489,7 @@
           "index": 42,
           "model_name": "[5G] 갤럭시 S24+ (512GB)",
           "model_number": "SM-S926N_512G",
+          "network_type": "5G",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -10345,9 +10501,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 282000,
-                    "number_port_support": 282000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 336000,
+                    "number_port_support": 336000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -10377,9 +10533,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 325000,
-                    "number_port_support": 325000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 389000,
+                    "number_port_support": 389000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -10409,9 +10565,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 405000,
-                    "number_port_support": 405000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 490000,
+                    "number_port_support": 490000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -10441,9 +10597,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 428000,
-                    "number_port_support": 428000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 520000,
+                    "number_port_support": 520000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -10473,9 +10629,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 513000,
-                    "number_port_support": 513000,
-                    "announcement_date": "2025-06-12",
+                    "device_support": 553000,
+                    "number_port_support": 553000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -10507,7 +10663,7 @@
                     "plan_name": "5GX 프리미엄",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -10539,7 +10695,7 @@
                     "plan_name": "5GX 플래티넘",
                     "device_support": 630000,
                     "number_port_support": 630000,
-                    "announcement_date": "2025-06-12",
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -10569,6 +10725,7 @@
           "index": 43,
           "model_name": "[LTE] U+키즈폰 춘식이2",
           "model_number": "SM-A245N-UC2",
+          "network_type": "LTE",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -10772,6 +10929,7 @@
           "index": 44,
           "model_name": "[5G] 갤럭시 S23 FE",
           "model_number": "SM-S711N",
+          "network_type": "5G",
           "release_date": "2023-12",
           "support_info": {
             "carriers": {},
@@ -11007,6 +11165,7 @@
           "index": 45,
           "model_name": "[5G] 갤럭시 Jump3",
           "model_number": "SM-M446K",
+          "network_type": "5G",
           "release_date": "2023-11",
           "support_info": {
             "carriers": {},
@@ -11242,6 +11401,7 @@
           "index": 46,
           "model_name": "[5G] 갤럭시 Z 폴드5",
           "model_number": "SM-F946N",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -11477,6 +11637,7 @@
           "index": 47,
           "model_name": "[5G] 갤럭시 Z 폴드5 (512G)",
           "model_number": "SM-F946N_512G",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -11712,6 +11873,7 @@
           "index": 48,
           "model_name": "[5G] 갤럭시 Z 플립5",
           "model_number": "SM-F731N",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -11947,6 +12109,7 @@
           "index": 49,
           "model_name": "[5G] 갤럭시 Z 플립5 (512G)",
           "model_number": "SM-F731N_512G",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -12182,6 +12345,7 @@
           "index": 50,
           "model_name": "[5G] 갤럭시 Z 플립5 가비지타임 장도고 에디션",
           "model_number": "SM-F731N-GT2",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -12417,6 +12581,7 @@
           "index": 51,
           "model_name": "[5G] 갤럭시 Z 플립5 가비지타임 지상고 에디션",
           "model_number": "SM-F731N-GT1",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -12652,6 +12817,7 @@
           "index": 52,
           "model_name": "[5G] 갤럭시 Z 플립5 대한항공 에디션",
           "model_number": "SM-F731NK512_AIR",
+          "network_type": "5G",
           "release_date": "2023-08",
           "support_info": {
             "carriers": {},
@@ -12892,6 +13058,7 @@
           "index": 0,
           "model_name": "[5G] 아이폰 16E (128G)",
           "model_number": "IP16E_128GB",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -12903,9 +13070,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 45000,
-                    "number_port_support": 45000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 287000,
+                    "number_port_support": 287000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -12935,9 +13102,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 53000,
-                    "number_port_support": 53000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 334000,
+                    "number_port_support": 334000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -12967,9 +13134,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 69000,
-                    "number_port_support": 69000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 424000,
+                    "number_port_support": 424000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -12999,9 +13166,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 74000,
-                    "number_port_support": 74000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 450000,
+                    "number_port_support": 450000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -13031,9 +13198,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 91000,
-                    "number_port_support": 91000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 495000,
+                    "number_port_support": 495000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -13063,9 +13230,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "5GX 프리미엄",
-                    "device_support": 128000,
-                    "number_port_support": 128000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -13095,9 +13262,9 @@
                     "carrier_name": "SK",
                     "price": "990,000원",
                     "plan_name": "5GX 플래티넘",
-                    "device_support": 138000,
-                    "number_port_support": 138000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -13127,6 +13294,7 @@
           "index": 1,
           "model_name": "[5G] 아이폰 16E (256G)",
           "model_number": "IP16E_256GB",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -13138,9 +13306,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 45000,
-                    "number_port_support": 45000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 287000,
+                    "number_port_support": 287000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -13170,9 +13338,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 53000,
-                    "number_port_support": 53000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 334000,
+                    "number_port_support": 334000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -13202,9 +13370,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 69000,
-                    "number_port_support": 69000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 424000,
+                    "number_port_support": 424000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -13234,9 +13402,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 74000,
-                    "number_port_support": 74000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 450000,
+                    "number_port_support": 450000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -13266,9 +13434,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 91000,
-                    "number_port_support": 91000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 495000,
+                    "number_port_support": 495000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -13298,9 +13466,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "5GX 프리미엄",
-                    "device_support": 128000,
-                    "number_port_support": 128000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -13330,9 +13498,9 @@
                     "carrier_name": "SK",
                     "price": "1,133,000원",
                     "plan_name": "5GX 플래티넘",
-                    "device_support": 138000,
-                    "number_port_support": 138000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -13362,6 +13530,7 @@
           "index": 2,
           "model_name": "[5G] 아이폰 16E (512G)",
           "model_number": "IP16E_512GB",
+          "network_type": "5G",
           "release_date": "2025-02",
           "support_info": {
             "carriers": {},
@@ -13373,9 +13542,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 45000,
-                    "number_port_support": 45000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 287000,
+                    "number_port_support": 287000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -13405,9 +13574,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 53000,
-                    "number_port_support": 53000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 334000,
+                    "number_port_support": 334000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -13437,9 +13606,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 69000,
-                    "number_port_support": 69000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 424000,
+                    "number_port_support": 424000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -13469,9 +13638,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 74000,
-                    "number_port_support": 74000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 450000,
+                    "number_port_support": 450000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -13501,9 +13670,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 91000,
-                    "number_port_support": 91000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 495000,
+                    "number_port_support": 495000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -13533,9 +13702,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "5GX 프리미엄",
-                    "device_support": 128000,
-                    "number_port_support": 128000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -13565,9 +13734,9 @@
                     "carrier_name": "SK",
                     "price": "1,430,000원",
                     "plan_name": "5GX 플래티넘",
-                    "device_support": 138000,
-                    "number_port_support": 138000,
-                    "announcement_date": "2025-02-28",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -13597,6 +13766,7 @@
           "index": 3,
           "model_name": "[5G] 아이폰 16 (128G)",
           "model_number": "IP16_128GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -13832,6 +14002,7 @@
           "index": 4,
           "model_name": "[5G] 아이폰 16 (256G)",
           "model_number": "IP16_256GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -14067,6 +14238,7 @@
           "index": 5,
           "model_name": "[5G] 아이폰 16 (512G)",
           "model_number": "IP16_512GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -14302,6 +14474,7 @@
           "index": 6,
           "model_name": "[5G] 아이폰 16 PLUS (128G)",
           "model_number": "IP16PL_128GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -14313,9 +14486,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 86000,
-                    "number_port_support": 86000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 287000,
+                    "number_port_support": 287000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -14345,9 +14518,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 95000,
-                    "number_port_support": 95000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 334000,
+                    "number_port_support": 334000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -14377,9 +14550,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 112000,
-                    "number_port_support": 112000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 424000,
+                    "number_port_support": 424000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -14409,9 +14582,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 118000,
-                    "number_port_support": 118000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 450000,
+                    "number_port_support": 450000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -14441,9 +14614,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 135000,
-                    "number_port_support": 135000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 495000,
+                    "number_port_support": 495000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -14473,9 +14646,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "5GX 프리미엄",
-                    "device_support": 220000,
-                    "number_port_support": 220000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -14505,9 +14678,9 @@
                     "carrier_name": "SK",
                     "price": "1,342,000원",
                     "plan_name": "5GX 플래티넘",
-                    "device_support": 260000,
-                    "number_port_support": 260000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -14537,6 +14710,7 @@
           "index": 7,
           "model_name": "[5G] 아이폰 16 PLUS (256G)",
           "model_number": "IP16PL_256GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -14548,9 +14722,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 86000,
-                    "number_port_support": 86000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 287000,
+                    "number_port_support": 287000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -14580,9 +14754,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 95000,
-                    "number_port_support": 95000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 334000,
+                    "number_port_support": 334000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -14612,9 +14786,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 112000,
-                    "number_port_support": 112000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 424000,
+                    "number_port_support": 424000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -14644,9 +14818,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 118000,
-                    "number_port_support": 118000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 450000,
+                    "number_port_support": 450000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -14676,9 +14850,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 135000,
-                    "number_port_support": 135000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 495000,
+                    "number_port_support": 495000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -14708,9 +14882,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "5GX 프리미엄",
-                    "device_support": 220000,
-                    "number_port_support": 220000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -14740,9 +14914,9 @@
                     "carrier_name": "SK",
                     "price": "1,496,000원",
                     "plan_name": "5GX 플래티넘",
-                    "device_support": 260000,
-                    "number_port_support": 260000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -14772,6 +14946,7 @@
           "index": 8,
           "model_name": "[5G] 아이폰 16 PLUS (512G)",
           "model_number": "IP16PL_512GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -14783,9 +14958,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "컴팩트",
-                    "device_support": 86000,
-                    "number_port_support": 86000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 287000,
+                    "number_port_support": 287000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 39000
                   },
                   "KT": {
@@ -14815,9 +14990,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "컴팩트플러스",
-                    "device_support": 95000,
-                    "number_port_support": 95000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 334000,
+                    "number_port_support": 334000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 45000
                   },
                   "KT": {
@@ -14847,9 +15022,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "베이직플러스",
-                    "device_support": 112000,
-                    "number_port_support": 112000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 424000,
+                    "number_port_support": 424000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 59000
                   },
                   "KT": {
@@ -14879,9 +15054,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "베이직플러스 50GB업",
-                    "device_support": 118000,
-                    "number_port_support": 118000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 450000,
+                    "number_port_support": 450000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 66000
                   },
                   "KT": {
@@ -14911,9 +15086,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "5GX 레귤러 플러스",
-                    "device_support": 135000,
-                    "number_port_support": 135000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 495000,
+                    "number_port_support": 495000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 79000
                   },
                   "KT": {
@@ -14943,9 +15118,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "5GX 프리미엄",
-                    "device_support": 220000,
-                    "number_port_support": 220000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 109000
                   },
                   "KT": {
@@ -14975,9 +15150,9 @@
                     "carrier_name": "SK",
                     "price": "1,793,000원",
                     "plan_name": "5GX 플래티넘",
-                    "device_support": 260000,
-                    "number_port_support": 260000,
-                    "announcement_date": "2024-09-20",
+                    "device_support": 550000,
+                    "number_port_support": 550000,
+                    "announcement_date": "2025-06-24",
                     "monthly_fee": 125000
                   },
                   "KT": {
@@ -15007,6 +15182,7 @@
           "index": 9,
           "model_name": "[5G] 아이폰 16 PRO (128G)",
           "model_number": "IP16P_128GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -15242,6 +15418,7 @@
           "index": 10,
           "model_name": "[5G] 아이폰 16 PRO (1T)",
           "model_number": "IP16P_1TB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -15477,6 +15654,7 @@
           "index": 11,
           "model_name": "[5G] 아이폰 16 PRO (256G)",
           "model_number": "IP16P_256GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -15712,6 +15890,7 @@
           "index": 12,
           "model_name": "[5G] 아이폰 16 PRO (512G)",
           "model_number": "IP16P_512GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -15947,6 +16126,7 @@
           "index": 13,
           "model_name": "[5G] 아이폰 16 PRO MAX (1T)",
           "model_number": "IP16PM_1TB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -16182,6 +16362,7 @@
           "index": 14,
           "model_name": "[5G] 아이폰 16 PRO MAX (256G)",
           "model_number": "IP16PM_256GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -16417,6 +16598,7 @@
           "index": 15,
           "model_name": "[5G] 아이폰 16 PRO MAX (512G)",
           "model_number": "IP16PM_512GB",
+          "network_type": "5G",
           "release_date": "2024-09",
           "support_info": {
             "carriers": {},
@@ -16652,6 +16834,7 @@
           "index": 16,
           "model_name": "[5G] 아이폰 13 열공 에디션",
           "model_number": "AIP13-128WHE",
+          "network_type": "5G",
           "release_date": "2024-08",
           "support_info": {
             "carriers": {},
@@ -16887,6 +17070,7 @@
           "index": 17,
           "model_name": "[5G] 아이폰 15 (128G)",
           "model_number": "IP15_128GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -17122,6 +17306,7 @@
           "index": 18,
           "model_name": "[5G] 아이폰 15 (256G)",
           "model_number": "IP15_256GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -17357,6 +17542,7 @@
           "index": 19,
           "model_name": "[5G] 아이폰 15 (512G)",
           "model_number": "IP15_512GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -17592,6 +17778,7 @@
           "index": 20,
           "model_name": "[5G] 아이폰 15 Plus (128G)",
           "model_number": "IP15PL_128GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -17827,6 +18014,7 @@
           "index": 21,
           "model_name": "[5G] 아이폰 15 Plus (256G)",
           "model_number": "IP15PL_256GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -18062,6 +18250,7 @@
           "index": 22,
           "model_name": "[5G] 아이폰 15 Plus (512G)",
           "model_number": "IP15PL_512GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -18297,6 +18486,7 @@
           "index": 23,
           "model_name": "[5G] 아이폰 15 Pro (128G)",
           "model_number": "IP15P_128GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -18532,6 +18722,7 @@
           "index": 24,
           "model_name": "[5G] 아이폰 15 Pro (1TB)",
           "model_number": "IP15P_1TB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -18767,6 +18958,7 @@
           "index": 25,
           "model_name": "[5G] 아이폰 15 Pro (256G)",
           "model_number": "IP15P_256GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -19002,6 +19194,7 @@
           "index": 26,
           "model_name": "[5G] 아이폰 15 Pro (512G)",
           "model_number": "IP15P_512GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -19237,6 +19430,7 @@
           "index": 27,
           "model_name": "[5G] 아이폰 15 Pro Max (1TB)",
           "model_number": "IP15PM_1TB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -19472,6 +19666,7 @@
           "index": 28,
           "model_name": "[5G] 아이폰 15 Pro Max (256G)",
           "model_number": "IP15PM_256GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -19707,6 +19902,7 @@
           "index": 29,
           "model_name": "[5G] 아이폰 15 Pro Max (512G)",
           "model_number": "IP15PM_512GB",
+          "network_type": "5G",
           "release_date": "2023-10",
           "support_info": {
             "carriers": {},
@@ -19947,6 +20143,7 @@
           "index": 0,
           "model_name": "[5G] G34-5G",
           "model_number": "XT2363-3K",
+          "network_type": "5G",
           "release_date": "2025-03",
           "support_info": {
             "carriers": {},
@@ -20182,6 +20379,7 @@
           "index": 1,
           "model_name": "[LTE] 클래식 폴더",
           "model_number": "Z2339K",
+          "network_type": "LTE",
           "release_date": "2025-03",
           "support_info": {
             "carriers": {},
@@ -20385,6 +20583,7 @@
           "index": 2,
           "model_name": "[5G] 샤오미 레드미 노트14 프로 5G",
           "model_number": "X-RN14P",
+          "network_type": "5G",
           "release_date": "2025-01",
           "support_info": {
             "carriers": {},
@@ -20620,6 +20819,7 @@
           "index": 3,
           "model_name": "[5G] 샤오미 레드미 노트14 프로 5G 512",
           "model_number": "MI-RMN14P5GK512",
+          "network_type": "5G",
           "release_date": "2025-01",
           "support_info": {
             "carriers": {},
@@ -20855,6 +21055,7 @@
           "index": 4,
           "model_name": "[LTE] ZEM폰 포켓몬에디션3",
           "model_number": "AT-M150S",
+          "network_type": "LTE",
           "release_date": "2024-12",
           "support_info": {
             "carriers": {},
@@ -21058,6 +21259,7 @@
           "index": 5,
           "model_name": "[LTE] 샤오미 레드미 노트 14C",
           "model_number": "X-RN14C",
+          "network_type": "LTE",
           "release_date": "2024-10",
           "support_info": {
             "carriers": {},
@@ -21261,6 +21463,7 @@
           "index": 6,
           "model_name": "[LTE] 샤오미 레드미 노트 14C_8G",
           "model_number": "X-RN14C_8",
+          "network_type": "LTE",
           "release_date": "2024-10",
           "support_info": {
             "carriers": {},
@@ -21464,6 +21667,7 @@
           "index": 7,
           "model_name": "[5G] 샤오미 레드미 노트13 프로 5G",
           "model_number": "X-RN13P_OE",
+          "network_type": "5G",
           "release_date": "2024-03",
           "support_info": {
             "carriers": {},
@@ -21699,6 +21903,7 @@
           "index": 8,
           "model_name": "[5G] 샤오미 레드미 노트13 프로 5G 512",
           "model_number": "X-RN13P_12_OE",
+          "network_type": "5G",
           "release_date": "2024-03",
           "support_info": {
             "carriers": {},
@@ -21934,6 +22139,7 @@
           "index": 9,
           "model_name": "[LTE] 샤오미 레드미 노트13",
           "model_number": "X-RN13_OE",
+          "network_type": "LTE",
           "release_date": "2024-03",
           "support_info": {
             "carriers": {},
@@ -22137,6 +22343,7 @@
           "index": 10,
           "model_name": "[LTE] ZEM폰 포켓몬에디션2",
           "model_number": "AT-M130S",
+          "network_type": "LTE",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
@@ -22340,6 +22547,7 @@
           "index": 11,
           "model_name": "[LTE] 시나모롤 키즈폰",
           "model_number": "AT-M130K",
+          "network_type": "LTE",
           "release_date": "2024-01",
           "support_info": {
             "carriers": {},
