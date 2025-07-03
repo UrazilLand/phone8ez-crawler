@@ -715,6 +715,140 @@ class SmartChoiceCrawler:
             utils.log_message(f"지원금 정보 추출 중 오류: {e}")
             return None
 
+    def close_phone_modal(self):
+        """휴대폰 선택 모달 닫기"""
+        try:
+            utils.log_message("휴대폰 선택 모달 닫기 시도...")
+            
+            # 요청된 셀렉터로 모달 닫기 시도
+            modal_close_btn = self.driver.find_element(By.CSS_SELECTOR, "#contentsarea > div.devicesupport > div.contentsbox > div.modalpop > div.popupwrap.selectProductPopup > button")
+            if modal_close_btn.is_displayed():
+                modal_close_btn.click()
+                time.sleep(2)
+                utils.log_message("휴대폰 선택 모달 닫기 성공")
+                return True
+                
+        except Exception as e:
+            utils.log_message(f"휴대폰 선택 모달 닫기 실패: {e}")
+            
+            # 백업 방법들 시도
+            try:
+                # 기존 셀렉터로 시도
+                modal_close_btn = self.driver.find_element(By.CSS_SELECTOR, "body > article > div.popup.popup--wd740.selectPhone_popup.match.on > a")
+                if modal_close_btn.is_displayed():
+                    modal_close_btn.click()
+                    time.sleep(2)
+                    utils.log_message("백업 셀렉터로 모달 닫기 성공")
+                    return True
+            except:
+                pass
+            
+            try:
+                # ESC 키로 시도
+                self.driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+                time.sleep(1)
+                utils.log_message("ESC 키로 모달 닫기 시도")
+                return True
+            except:
+                pass
+        
+        utils.log_message("모든 모달 닫기 방법 실패")
+        return False
+
+    def process_model_with_retry(self, manufacturer, phone_info, max_retries=3):
+        """모델 선택부터 지원금 정보 추출까지의 과정을 재시도 로직과 함께 처리"""
+        index = phone_info["index"]
+        model_name = phone_info["name"]
+        release_date = phone_info["release_date"]
+        
+        for attempt in range(max_retries):
+            utils.log_message(f"=== {manufacturer} - 인덱스 {index} 모델 처리 시도 {attempt + 1}/{max_retries} ({model_name}, {release_date}) ===")
+            
+            try:
+                # 1. 모델 선택
+                if not self.select_phone_by_index(index):
+                    utils.log_message(f"모델 선택 실패 (시도 {attempt + 1})")
+                    if attempt < max_retries - 1:
+                        self.close_phone_modal()
+                        time.sleep(2)
+                        continue
+                    else:
+                        return None
+                
+                # 2. 모델 정보 추출
+                model_info = self.extract_model_info(index)
+                
+                # 3. 선택하기 버튼 클릭
+                if not self.click_select_phone_button():
+                    utils.log_message(f"선택하기 버튼 클릭 실패 (시도 {attempt + 1})")
+                    if attempt < max_retries - 1:
+                        self.close_phone_modal()
+                        time.sleep(2)
+                        continue
+                    else:
+                        return None
+                
+                # 4. 검색 버튼 클릭
+                if not self.click_search_button():
+                    utils.log_message(f"검색 버튼 클릭 실패 (시도 {attempt + 1})")
+                    if attempt < max_retries - 1:
+                        # 검색 버튼 실패 시 모달이 열려있을 수 있으므로 닫기 시도
+                        self.close_phone_modal()
+                        time.sleep(2)
+                        continue
+                    else:
+                        return None
+                
+                # 5. 지원금 정보 추출
+                support_info = self.extract_support_info()
+                if not support_info:
+                    utils.log_message(f"지원금 정보 추출 실패 (시도 {attempt + 1})")
+                    if attempt < max_retries - 1:
+                        # 지원금 정보 추출 실패 시 모달이 열려있을 수 있으므로 닫기 시도
+                        self.close_phone_modal()
+                        time.sleep(2)
+                        continue
+                    else:
+                        return None
+                
+                # 모든 단계가 성공한 경우
+                utils.log_message(f"모델 처리 성공 (시도 {attempt + 1})")
+                
+                # 모델 정보 구성
+                if model_info:
+                    model_data = {
+                        "index": index,
+                        "model_name": model_info["model_name"],
+                        "model_number": model_info["model_number"],
+                        "network_type": model_info["network_type"],
+                        "release_date": release_date,
+                        "support_info": support_info,
+                        "attempts": attempt + 1
+                    }
+                else:
+                    model_data = {
+                        "index": index,
+                        "model_name": model_name,
+                        "model_number": f"INDEX_{index}",
+                        "network_type": "Unknown",
+                        "release_date": release_date,
+                        "support_info": support_info,
+                        "attempts": attempt + 1
+                    }
+                
+                return model_data
+                
+            except Exception as e:
+                utils.log_message(f"모델 처리 중 예외 발생 (시도 {attempt + 1}): {e}")
+                if attempt < max_retries - 1:
+                    self.close_phone_modal()
+                    time.sleep(2)
+                    continue
+                else:
+                    return None
+        
+        return None
+
 def main():
     """메인 실행 함수"""
     utils.log_message("스마트초이스 크롤링 시작")
@@ -807,100 +941,86 @@ def main():
             "manufacturers": {}
         }
         
-        # 각 제조사별로 필터링된 모델만 선택
+        # 각 제조사별로 필터링된 모델만 선택 (수집 개수 검증 및 반복)
         for manufacturer in manufacturers:
             utils.log_message(f"=== {manufacturer} 제조사 필터링된 모델 수집 시작 (정식 버전) ===")
             
             # 해당 제조사의 필터링된 모델 목록 가져오기
-            filtered_phones = all_phone_data.get(manufacturer, [])
-            if not filtered_phones:
+            original_filtered_phones = all_phone_data.get(manufacturer, [])
+            if not original_filtered_phones:
                 utils.log_message(f"{manufacturer} 제조사의 필터링된 모델이 없습니다. 다음 제조사로 진행합니다.")
                 continue
             
-            utils.log_message(f"{manufacturer} 제조사 필터링된 모델 {len(filtered_phones)}개 수집 시작")
+            utils.log_message(f"{manufacturer} 제조사 필터링된 모델 {len(original_filtered_phones)}개 수집 시작")
             
             manufacturer_data = {
                 "name": manufacturer,
                 "models": []
             }
             
-            # 해당 제조사 선택
-            if not crawler.select_manufacturer(manufacturer):
-                utils.log_message(f"{manufacturer} 제조사 선택 실패. 다음 제조사로 진행합니다.")
-                continue
+            # 수집 개수 검증 및 반복 로직
+            remaining_phones = original_filtered_phones.copy()
+            max_retry_rounds = 3  # 최대 3라운드까지 재시도
             
-            # 휴대폰 선택 버튼 클릭
-            if not crawler.click_phone_select_button():
-                utils.log_message(f"{manufacturer} 휴대폰 선택 버튼 클릭 실패. 다음 제조사로 진행합니다.")
-                continue
-            
-            # 필터링된 모델들의 인덱스만 사용하여 크롤링
-            for phone_info in filtered_phones:
-                index = phone_info["index"]
-                model_name = phone_info["name"]
-                release_date = phone_info["release_date"]
+            for round_num in range(max_retry_rounds):
+                utils.log_message(f"=== {manufacturer} 제조사 수집 라운드 {round_num + 1}/{max_retry_rounds} ===")
+                utils.log_message(f"남은 모델: {len(remaining_phones)}개, 성공한 모델: {len(manufacturer_data['models'])}개")
                 
-                utils.log_message(f"=== {manufacturer} - 인덱스 {index} 모델 수집 ({model_name}, {release_date}) ===")
-                
-                # 모델 선택
-                if not crawler.select_phone_by_index(index):
-                    utils.log_message(f"{manufacturer} 인덱스 {index} 모델 선택 실패. 다음 모델로 진행합니다.")
-                    continue
-                
-                # 모델 정보 추출 (모델 선택 직후, 선택하기 버튼 누르기 전)
-                model_info = crawler.extract_model_info(index)
-                
-                # 선택하기 버튼 클릭
-                if not crawler.click_select_phone_button():
-                    utils.log_message(f"{manufacturer} 인덱스 {index} 선택하기 버튼 클릭 실패. 다음 모델로 진행합니다.")
-                    continue
-                
-                # 검색 버튼 클릭
-                if not crawler.click_search_button():
-                    utils.log_message(f"{manufacturer} 인덱스 {index} 검색 버튼 클릭 실패. 다음 모델로 진행합니다.")
-                    continue
-                
-                # 지원금 정보 추출
-                support_info = crawler.extract_support_info()
-                if support_info:
-                    # 모델 정보 구성 (model_info가 None인 경우 기본값 사용)
-                    if model_info:
-                        model_data = {
-                            "index": index,
-                            "model_name": model_info["model_name"],
-                            "model_number": model_info["model_number"],
-                            "network_type": model_info["network_type"],
-                            "release_date": release_date,
-                            "support_info": support_info
-                        }
-                    else:
-                        # model_info가 None인 경우 기본값 사용
-                        model_data = {
-                            "index": index,
-                            "model_name": model_name,
-                            "model_number": f"INDEX_{index}",
-                            "network_type": "Unknown",
-                            "release_date": release_date,
-                            "support_info": support_info
-                        }
-                    
-                    manufacturer_data["models"].append(model_data)
-                    collected_data["total_models"] += 1
-                    
-                    utils.log_message(f"{manufacturer} 인덱스 {index} 모델 지원금 정보 수집 완료")
-                else:
-                    utils.log_message(f"{manufacturer} 인덱스 {index} 모델 지원금 정보 추출 실패")
-
-                # 다음 모델을 위해 스크롤을 맨 위로 올리고 휴대폰 선택 버튼을 다시 누름
-                crawler.driver.execute_script("window.scrollTo(0, 0);")
-                time.sleep(1)
-                
-                if not crawler.click_phone_select_button():
-                    utils.log_message(f"{manufacturer} 휴대폰 선택 버튼 재클릭 실패. 다음 제조사로 진행합니다.")
+                if not remaining_phones:
+                    utils.log_message(f"{manufacturer} 제조사 모든 모델 수집 완료")
                     break
+                
+                # 해당 제조사 선택
+                if not crawler.select_manufacturer(manufacturer):
+                    utils.log_message(f"{manufacturer} 제조사 선택 실패. 다음 제조사로 진행합니다.")
+                    break
+                
+                # 휴대폰 선택 버튼 클릭
+                if not crawler.click_phone_select_button():
+                    utils.log_message(f"{manufacturer} 휴대폰 선택 버튼 클릭 실패. 다음 제조사로 진행합니다.")
+                    break
+                
+                # 남은 모델들의 인덱스만 사용하여 크롤링
+                failed_phones = []
+                for phone_info in remaining_phones:
+                    model_data = crawler.process_model_with_retry(manufacturer, phone_info)
+                    
+                    if model_data:
+                        manufacturer_data["models"].append(model_data)
+                        collected_data["total_models"] += 1
+                        
+                        utils.log_message(f"{manufacturer} 인덱스 {phone_info['index']} 모델 지원금 정보 수집 완료")
+                    else:
+                        utils.log_message(f"{manufacturer} 인덱스 {phone_info['index']} 모델 지원금 정보 추출 실패")
+                        failed_phones.append(phone_info)
+
+                    # 다음 모델을 위해 스크롤을 맨 위로 올리고 휴대폰 선택 버튼을 다시 누름
+                    crawler.driver.execute_script("window.scrollTo(0, 0);")
+                    time.sleep(1)
+                    
+                    if not crawler.click_phone_select_button():
+                        utils.log_message(f"{manufacturer} 휴대폰 선택 버튼 재클릭 실패. 다음 제조사로 진행합니다.")
+                        break
+                
+                # 실패한 모델들을 다음 라운드에서 재시도
+                remaining_phones = failed_phones
+                
+                if not remaining_phones:
+                    utils.log_message(f"{manufacturer} 제조사 모든 모델 수집 완료 (라운드 {round_num + 1})")
+                    break
+                else:
+                    utils.log_message(f"{manufacturer} 제조사 {len(remaining_phones)}개 모델 재시도 필요")
             
+            # 최종 수집 결과 검증
+            final_collected_count = len(manufacturer_data["models"])
+            original_count = len(original_filtered_phones)
+            
+            if final_collected_count == original_count:
+                utils.log_message(f"{manufacturer} 제조사 수집 완료: {final_collected_count}/{original_count}개 모델 (100% 성공)")
+            else:
+                utils.log_message(f"{manufacturer} 제조사 수집 완료: {final_collected_count}/{original_count}개 모델 ({final_collected_count/original_count*100:.1f}% 성공)")
+
             collected_data["manufacturers"][manufacturer] = manufacturer_data
-            utils.log_message(f"{manufacturer} 제조사 수집 완료: {len(manufacturer_data['models'])}개 모델")
         
         # 데이터 구조 개선: 통신사별 요금제 중복 제거 및 모델 정보 상단 추가
         utils.log_message("=== 데이터 구조 개선 및 정리 ===")
